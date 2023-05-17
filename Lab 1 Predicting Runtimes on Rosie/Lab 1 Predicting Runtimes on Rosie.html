@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html class="" dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="sentry-trace" content="cc1f899cef934785bb323b218e824c0a-eea7be19237c2568-0">
+  <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/fonts/lato/extended/Lato-Regular-bd03a2cc27.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/fonts/lato/extended/Lato-Bold-cccb897485.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/fonts/lato/extended/Lato-Italic-4eb103b4d1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="stylesheet" href="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/fonts-43e9c545fc.css" media="screen">
+    <script type="text/javascript" async="" src="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/heap-3001039959.js"></script><script>if (navigator.userAgent.match(/(MSIE|Trident\/)/)) location.replace('/ie-is-not-supported.html')</script>
+  
+  <link rel="icon" type="image/x-icon" href="https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/350939/MSOE-U-BK_RD-web-sml.png">
+  <link rel="apple-touch-icon" href="https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/402030/MSOE-U-BK_RD-web.png">
+  <link rel="stylesheet" href="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/variables-7dd4b80918af0e0218ec0229e4bd5873.css" media="all">
+  <link rel="stylesheet" href="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/common-04107f0c72.css" media="all">
+  <meta name="apple-itunes-app" content="app-id=480883488">
+<link rel="manifest" href="https://msoe.instructure.com/web-app-manifest/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e3e3e3">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/assignments_2_student-e78b9a386b.css" media="all">
+<link rel="stylesheet" href="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/new_user_tutorials-2950c871dd.css" media="all">
+  <link rel="stylesheet" href="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/canvas.css" media="all">
+  <script>
+    function _earlyClick(e){
+      var c = e.target
+      while (c && c.ownerDocument) {
+        if (c.getAttribute('href') == '#' || c.getAttribute('data-method')) {
+          if (!e.defaultPrevented) {
+            e.preventDefault()
+          }
+          (_earlyClick.clicks = _earlyClick.clicks || []).push(c)
+          break
+        }
+        c = c.parentNode
+      }
+    }
+    document.addEventListener('click', _earlyClick)
+  </script>
+
+
+  <script>
+    INST = {"environment":"production","allowMediaComments":true,"kalturaSettings":{"domain":"nv.instructuremedia.com","resource_domain":"nv.instructuremedia.com","rtmp_domain":"iad.rtmp.instructuremedia.com","partner_id":"9","subpartner_id":"0","player_ui_conf":"0","kcw_ui_conf":"0","upload_ui_conf":"0","max_file_size_bytes":534773760,"do_analytics":false,"hide_rte_button":false,"js_uploader":true},"logPageViews":true,"editorButtons":[{"name":"Commons Favorites","id":1,"favorite":false,"url":"https://lor.instructure.com/api/lti/favorite-resources","icon_url":"https://lor.instructure.com/img/icon_commons.png","canvas_icon_class":null,"width":800,"height":400,"use_tray":true,"description":"\u003cp\u003eFind and share course content\u003c/p\u003e\n"},{"name":"YouTube","id":36,"favorite":false,"url":"https://www.edu-apps.org/lti_public_resources/?tool_id=youtube","icon_url":"https://www.edu-apps.org/assets/lti_public_resources/youtube_icon.png","canvas_icon_class":null,"width":560,"height":600,"use_tray":false,"description":"\u003cp\u003eSearch publicly available YouTube videos. A new icon will show up in your course rich editor letting you search YouTube and click to embed videos in your course material.\u003c/p\u003e\n"},{"name":"Box","id":85,"favorite":false,"url":"https://www.edu-apps.org/box/","icon_url":"https://www.edu-apps.org/assets/lti_box_engine/icon.png","canvas_icon_class":{"enabled":"true"},"width":430,"height":200,"use_tray":false,"description":"\u003cp\u003eEmbed files from Box\u003c/p\u003e\n"},{"name":"VidGrid Embed","id":86,"favorite":false,"url":"https://app.vidgrid.com/lti/embed/13","icon_url":"https://s3.amazonaws.com/vidgrid-public-assets/icons/icon16active.png","canvas_icon_class":null,"width":800,"height":400,"use_tray":false,"description":"\u003cp\u003eEasily record, upload, or search for existing videos to insert into your course. The VidGrid Embed icon will appear in the Rich Content Editor (RCE). The instructor can preview, add questions, request captions, and edit the video from the integration before it is inserted into a course.\u003c/p\u003e\n"},{"name":"Vimeo","id":91,"favorite":false,"url":"https://www.edu-apps.org/lti_public_resources/?tool_id=vimeo","icon_url":"https://www.edu-apps.org/assets/lti_public_resources/vimeo_icon.png","canvas_icon_class":null,"width":560,"height":600,"use_tray":false,"description":"\u003cp\u003eVimeo is a video sharing website on which users can upload, share, and view videos. The community of Vimeo includes indie, professional, and novice filmmakers.\u003c/p\u003e\n"},{"name":"Wikipedia","id":92,"favorite":false,"url":"https://www.edu-apps.org/tool_redirect?id=wikipedia","icon_url":"https://www.edu-apps.org/tools/wikipedia/icon.png","canvas_icon_class":null,"width":590,"height":450,"use_tray":false,"description":"\u003cp\u003eArticles from The Free Encyclopedia\u003c/p\u003e\n"},{"name":"Insert a math equation - MathType","id":229,"favorite":false,"url":"https://www.wiris.net/instructure.com/canvas/editor/dialog","icon_url":"https://www.wiris.net/instructure.com/canvas/editor/icon.gif","canvas_icon_class":null,"width":570,"height":450,"use_tray":false,"description":"\u003cp\u003eInsert and edit mathematical formulas with MathType\u003c/p\u003e\n"},{"name":"Insert a chemistry formula - ChemType","id":230,"favorite":false,"url":"https://www.wiris.net/instructure.com/canvas/editor-chemistry/dialog","icon_url":"https://www.wiris.net/instructure.com/canvas/editor-chemistry/icon.gif","canvas_icon_class":null,"width":570,"height":450,"use_tray":false,"description":"\u003cp\u003eInsert and edit chemistry formulas with ChemType\u003c/p\u003e\n"},{"name":"Microsoft Teams Meetings","id":235,"favorite":false,"url":"https://msteams-lti-iad-prod.inscloudgate.net/resource_link_request","icon_url":"https://msteams-lti-iad-prod.inscloudgate.net/images/placement_icon.png","canvas_icon_class":null,"width":575,"height":700,"use_tray":false,"description":"\u003cp\u003eMicrosoft Teams Meetings integration for Canvas LMS\u003c/p\u003e\n"},{"name":"Microsoft OneDrive","id":1220,"favorite":false,"url":"https://onedrivelti.microsoft.com/tool","icon_url":"https://onedrivelti.microsoft.com/favicon-1.ico","canvas_icon_class":null,"width":800,"height":400,"use_tray":false,"description":"\u003cp\u003eMicrosoft OneDrive LTI 1.3\u003c/p\u003e\n"}]};
+    ENV = {"ASSET_HOST":"https://du11hjcvx0uqb.cloudfront.net","active_brand_config_json_url":"https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/7210e243563a114a281d4aa4fd2af9c7/variables-7dd4b80918af0e0218ec0229e4bd5873.json","active_brand_config":{"md5":"7210e243563a114a281d4aa4fd2af9c7","variables":{"ic-brand-primary":"#c5050c","ic-brand-font-color-dark":"#333333","ic-link-color":"#000000","ic-brand-button--secondary-bgd":"#333333","ic-brand-global-nav-bgd":"#e3e3e3","ic-brand-global-nav-ic-icon-svg-fill":"#000000","ic-brand-global-nav-menu-item__text-color":"#000000","ic-brand-global-nav-avatar-border":"#000000","ic-brand-global-nav-menu-item__badge-bgd":"#000000","ic-brand-global-nav-logo-bgd":"#e3e3e3","ic-brand-header-image":"https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/402025/MSOE-U_REV.png","ic-brand-mobile-global-nav-logo":"https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/350941/MSOE-U-BK_RD-web.png","ic-brand-watermark-opacity":"1","ic-brand-favicon":"https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/350939/MSOE-U-BK_RD-web-sml.png","ic-brand-apple-touch-icon":"https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/402030/MSOE-U-BK_RD-web.png","ic-brand-msapplication-tile-square":"https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/402026/MSOE-U_REV.png","ic-brand-msapplication-tile-wide":"https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/402027/MSOE-U_REV.png","ic-brand-right-sidebar-logo":"https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/779083/canvas-265x150.jpg","ic-brand-Login-body-bgd-color":"#e3e3e3","ic-brand-Login-body-bgd-shadow-color":"#a40900","ic-brand-Login-logo":"https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/696/1200px-Milwaukee_School_of_Engineering_logo.svg.png","ic-brand-Login-Content-label-text-color":"#000000","ic-brand-Login-Content-password-text-color":"#000000","ic-brand-Login-footer-link-color":"#000000","ic-brand-Login-footer-link-color-hover":"#000000","ic-brand-Login-instructure-logo":"#000000"},"share":false,"name":null,"created_at":"2023-03-10T17:40:30-06:00","js_overrides":"https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/1416461/canvas.js","css_overrides":"https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/1973025/canvas.css","mobile_js_overrides":"https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/1416463/canvas_mobile.js","mobile_css_overrides":"https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/1416464/canvas.css","parent_md5":null},"confetti_branding_enabled":false,"url_to_what_gets_loaded_inside_the_tinymce_editor_css":["https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/7210e243563a114a281d4aa4fd2af9c7/variables-7dd4b80918af0e0218ec0229e4bd5873.css","https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/what_gets_loaded_inside_the_tinymce_editor-a64c7fe33c.css","https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-43e9c545fc.css"],"url_for_high_contrast_tinymce_editor_css":["https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/default/variables-high_contrast-7dd4b80918af0e0218ec0229e4bd5873.css","https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_high_contrast/bundles/what_gets_loaded_inside_the_tinymce_editor-fa0672d544.css","https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-43e9c545fc.css"],"current_user_id":"2252","current_user_global_id":"98880000000002252","current_user_roles":["user","student"],"current_user_is_student":true,"current_user_types":[],"current_user_disabled_inbox":false,"current_user_visited_tabs":null,"discussions_reporting":true,"files_domain":"cluster237.canvas-user-content.com","group_information":null,"DOMAIN_ROOT_ACCOUNT_ID":"98880000000000001","k12":false,"help_link_name":"Help","help_link_icon":"help","use_high_contrast":false,"auto_show_cc":false,"disable_celebrations":false,"disable_keyboard_shortcuts":false,"LTI_LAUNCH_FRAME_ALLOWANCES":["geolocation *","microphone *","camera *","midi *","encrypted-media *","autoplay *","clipboard-write *","display-capture *"],"DEEP_LINKING_POST_MESSAGE_ORIGIN":"https://msoe.instructure.com","DEEP_LINKING_LOGGING":null,"comment_library_suggestions_enabled":false,"SETTINGS":{"open_registration":false,"collapse_global_nav":true,"release_notes_badge_disabled":false},"FULL_STORY_ENABLED":false,"RAILS_ENVIRONMENT":"Production","SENTRY_FRONTEND":{"dsn":"https://355a1d96717e4038ac25aa852fa79a8f@relay-iad.sentry.insops.net/388","org_slug":"instructure","base_url":"https://sentry.insops.net","normalized_route":"/courses/{course_id}/assignments/{id}","errors_sample_rate":"0.0005","traces_sample_rate":"0.0005","url_deny_pattern":"instructure-uploads.*amazonaws.com","revision":"canvas-lms@20230510.185"},"DATA_COLLECTION_ENDPOINT":"https://canvas-frontend-data-iad-prod.inscloudgate.net/submit","DIRECT_SHARE_ENABLED":false,"CAN_VIEW_CONTENT_SHARES":false,"FEATURES":{"featured_help_links":true,"lti_platform_storage":false,"scale_equation_images":true,"buttons_and_icons_cropper":true,"calendar_series":false,"account_level_blackout_dates":false,"account_calendar_events":true,"rce_ux_improvements":false,"render_both_to_do_lists":false,"course_paces_redesign":false,"course_paces_for_students":false,"rce_better_paste":true,"module_publish_menu":false,"explicit_latex_typesetting":false,"dev_key_oidc_alert":false,"rce_new_external_tool_dialog_in_canvas":false,"rce_show_studio_media_options":false,"rce_improved_placeholders":true,"media_links_use_attachment_id":false,"product_tours":true,"files_dnd":true,"usage_rights_discussion_topics":true,"granular_permissions_manage_users":true,"create_course_subaccount_picker":true,"lti_deep_linking_module_index_menu_modal":true,"lti_multiple_assignment_deep_linking":true,"buttons_and_icons_root_account":true,"extended_submission_state":false,"scheduled_page_publication":true,"send_usage_metrics":true,"rce_transform_loaded_content":false,"embedded_release_notes":false,"canvas_k6_theme":false,"new_math_equation_handling":true},"current_user":{"id":"2252","anonymous_id":"1qk","display_name":"Sam Keyser","avatar_image_url":"https://msoe.instructure.com/images/thumbnails/424077/x02csYghRSza2S5hfQgpmZTWHmyQPgVIZdddmWqd","html_url":"https://msoe.instructure.com/about/2252","pronouns":null,"avatar_is_fallback":false},"page_view_update_url":"/page_views/32ce30f2-bda2-4f29-acb5-120a774a8dca?page_view_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpIjoiMzJjZTMwZjItYmRhMi00ZjI5LWFjYjUtMTIwYTc3NGE4ZGNhIiwidSI6OTg4ODAwMDAwMDAwMDIyNTIsImMiOiIyMDIzLTA1LTE3VDAxOjQzOjQ0LjI0WiJ9.3iY76DeiqVeEDTcX0IRl28tpK2nWe2QUMpHdsckOrXA","context_asset_string":"course_13814","ping_url":"https://msoe.instructure.com/api/v1/courses/13814/ping","TIMEZONE":"America/Chicago","CONTEXT_TIMEZONE":"America/Chicago","LOCALES":["en"],"BIGEASY_LOCALE":"en_US","FULLCALENDAR_LOCALE":"en","MOMENT_LOCALE":"en","rce_auto_save_max_age_ms":86400000,"K5_USER":false,"USE_CLASSIC_FONT":false,"K5_HOMEROOM_COURSE":false,"K5_SUBJECT_COURSE":false,"LOCALE_TRANSLATION_FILE":"/dist/javascripts/translations/en-888412cb6b.json","media_comment_asset_string":"user_2252","OBSERVER_OPTIONS":{"OBSERVED_USERS_LIST":[{"id":"2252","name":"Sam Keyser","created_at":"2020-07-31T11:05:06-05:00","sortable_name":"Keyser, Sam","short_name":"Sam Keyser","avatar_url":"https://msoe.instructure.com/images/thumbnails/424077/x02csYghRSza2S5hfQgpmZTWHmyQPgVIZdddmWqd"}],"CAN_ADD_OBSERVEE":false},"enrollment_state":"active","RICH_CONTENT_APP_HOST":"rich-content-iad.inscloudgate.net","JWT":"ZXlKaGJHY2lPaUprYVhJaUxDSmxibU1pT2lKQk1qVTJSME5OSWl3aWNtVm5hVzl1SWpvaWRYTXRaV0Z6ZEMweElpd2laVzUyYVhKdmJtMWxiblFpT2lKUWNtOWtkV04wYVc5dUluMC4uYXZCdTJQdHpnZFlCR1Y2VS5lRGxtSTVMYkpKR1JjQkN3cDB3MXFEMmJ4VHdnTTJ4MFg3THUzb3lmYU1IMDNDMDBtUEoyYkF5RE94Z0RXMnpuZ0ZCcF9wV2NFQXc4OU5uZlZ1blRXZlgyeTlISnpiWV9sNDlHaHAxQjdaLVd4NnB1cm5Va09VR0l0bkR6bDRIclVyWnBVd3pVMk5QaGRwUU1GWm5KLWVUUWl0RWNnQTdjOW5wTUgyLVg4MDlyTk1JTjFVc0xGNndSbk9uTzhGNlVyNmVPa1NjTDJjYmNJQ3lGdzRNNHN3R1hRaG1yMWxNMkJOeEVuVWluTUhmRVlpVG9FWXhmaWxUVTFja2UyU2NYeVYwWXVpN05LOTRSZ2hINGFhY0kzUkhMWGRpQTg0dy00RmhhSDRpZTdjdUt0LUU2bUhmTUI1dmtpVm9tV0gycGlwS0tVVzJjcFlNcUxTaExYTUo1SGFkZzJLUTdFQU5FUzJkeUxiSXU3ODVFUXd1V1d2MVFGUG15ZG1lSzc5OFUxdEpES2d4aTVTN0s3OVc1UGRJYUtuSk5HcjNSbk9ndE96QnF3UElHcDlnT0V2d09ocXdLWmF5Vms1Zk9Ia1JxWGtJa1h6Skp4b1FDM09SekhVX2VYTldsSEhBSk43N19JTHcyNm9aWnNPbTl1aDN6MW5jTlNBZGZWc1RJbkREdUxuaURHNFFjekdkWDl2SU93SW52eFY4ajU1WFBCeTZoRlZZcUdrRU4tYmhvbTRRV1Z4Vjc1QzBEWkdpcjg3SDI5NjAzWEFSdUV5VnVjRy03RmJrT2xnSTBua1cyYWdOczF5TlE3bkR2VG1PNWRGZjRkNmpLU0t5a1RxdHR3NndFVE1WdU1nLXZpam91R0dncUZ2WUhSNDVrbVhaci1pelRJbDRKTVg2VkNsUzVSRUoxZV9QMFRWZ21qaUlkMzY0NGowSy1lZnFxR05VSlAzd1c1Z2lJYXZpcTM3N1U2dVItdk1HSTVZTlhHSGFtVk4zUzkyN2s1VV90blJOYkxleDhnYzNZeGtUVjRHcXNoWmdiZThrQm5uNkZITUE1aFp5RXlMb0k1eDFRWWcuQVVxSmNmX3k0dVhkOXR2b0RfQUtIUQ==","RICH_CONTENT_CAN_UPLOAD_FILES":false,"RICH_CONTENT_CAN_EDIT_FILES":false,"RICH_CONTENT_FILES_TAB_DISABLED":true,"RICH_CONTENT_INST_RECORD_TAB_DISABLED":false,"a2_student_view":true,"peer_review_mode_enabled":false,"peer_review_available":true,"peer_display_name":"Sam Keyser","originality_reports_for_a2_enabled":true,"restrict_quantitative_data":false,"grading_scheme":[["A",0.93],["AB",0.89],["B",0.85],["BC",0.81],["C",0.77],["CD",0.74],["D",0.7],["F",0.0]],"belongs_to_unpublished_module":false,"ASSIGNMENT_ID":"155521","CONFETTI_ENABLED":true,"EMOJIS_ENABLED":true,"EMOJI_DENY_LIST":"","COURSE_ID":"13814","ISOBSERVER":false,"ORIGINALITY_REPORTS_FOR_A2":true,"PREREQS":{},"SUBMISSION_ID":"U3VibWlzc2lvbi0yMzcwNjU0","badge_counts":{"submissions":12},"notices":[],"active_context_tab":"assignments"};
+    BRANDABLE_CSS_HANDLEBARS_INDEX = [["new_styles_normal_contrast","new_styles_high_contrast","new_styles_normal_contrast_rtl","new_styles_high_contrast_rtl"],{"10":["8300658022",0,"250b5824c2",2],"15":["fc26aa5fd4",0,"f904416063",2],"19":["df5777ed9c"],"61":["f3934dab06","f405852bb2","ee5810890b","3fd9943b9a"],"67":["8b57f54e71",0,"43833dde85",2],"71":["35b89b103a","4304be7d41","58dbfc2651","2932678b1c"],"06":["cb9f63cba6",0,"2be010fc14",2],"f0":["7c947dce20",0,0,0],"c8":["12d5e4d1e8","9f7b02d283","4ebd280f3e","b547456f4c"],"1e":["02e336724a","d7bb142b0a","d7ac7fdfb8","c03b9b261e"],"b3":["8ebc71ebc3","cf8efa05c8","4efdc93a21","fd6d3a9780"],"4f":["0a2c3dcf2f",0,"79668e6396",2],"0c":["c26e82abac",0,"b71e9cbd6d",2],"da":["efb9fe6d7c","edbd1b5e83","a6dc56afb7","dfb2d13098"],"1d":["a3bfcb7961",0,"90682b3bbe",2],"08":["64bff5a97d"],"e2":["11429f119a"],"9f":["35936a18c3",0,0,0],"2b":["abf63f48ef","bf8e135ffe","378e0c136b","9833e305e6"],"2c":["6d919206cd",0,0,0],"c2":["6f2721ae01"],"9c":["ecafc938e4",0,"59e7c22304",2],"c5":["ebf0e1382f","7f587d9a8a","afbdabf23d","0d398196a8"],"f2":["51574f9b13"]}]
+;
+  </script>
+
+  <link rel="preload" href="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/variables-7dd4b80918af0e0218ec0229e4bd5873.js" as="script" type="text/javascript"><link rel="preload" href="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/Chicago-d9fecf4265.js" as="script" type="text/javascript"><link rel="preload" href="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/Chicago-d9fecf4265.js" as="script" type="text/javascript"><link rel="preload" href="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/en_US-80a0ce259b.js" as="script" type="text/javascript"><link rel="preload" href="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/main-e-a9aceb85d4.js" as="script" type="text/javascript" crossorigin="anonymous"><script>
+//<![CDATA[
+
+      ;["https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/7210e243563a114a281d4aa4fd2af9c7/variables-7dd4b80918af0e0218ec0229e4bd5873.js", "https://du11hjcvx0uqb.cloudfront.net/dist/timezone/America/Chicago-d9fecf4265.js", "https://du11hjcvx0uqb.cloudfront.net/dist/timezone/America/Chicago-d9fecf4265.js", "https://du11hjcvx0uqb.cloudfront.net/dist/timezone/en_US-80a0ce259b.js"].forEach(function(src) {
+        var s = document.createElement('script'); s.src = src; s.async = false;
+        document.head.appendChild(s)
+      });
+//]]>
+</script><script src="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/variables-7dd4b80918af0e0218ec0229e4bd5873.js"></script><script src="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/Chicago-d9fecf4265.js"></script><script src="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/Chicago-d9fecf4265.js"></script><script src="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/en_US-80a0ce259b.js"></script><script>
+//<![CDATA[
+
+      ;["https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/main-e-a9aceb85d4.js"].forEach(function(src) {
+        var s = document.createElement('script'); s.src = src; s.async = false; s.crossOrigin = 'anonymous';
+        document.head.appendChild(s)
+      });
+//]]>
+</script><script src="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/main-e-a9aceb85d4.js" crossorigin="anonymous"></script><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/assignments_show_student-c-5b88c2bb97.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/navigation_header-c-8aa52c6949.js" as="script" type="text/javascript"><script>
+//<![CDATA[
+(window.bundles || (window.bundles = [])).push('assignments_show_student');
+(window.bundles || (window.bundles = [])).push('navigation_header');
+//]]>
+</script>
+  <title>Lab 1: Predicting Runtimes on Rosie</title>
+
+
+
+    <script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
+      heap.load("3001039959");
+    </script>
+
+<script src="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/canvas.js"></script><style type="text/css"></style><script defer="defer" type="text/javascript" src="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/js.es"></script><style type="text/css">.mejs-offscreen{clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:polygon(0px 0,0 0,0 0,0 0);position:absolute!important;height:1px;width:1px;overflow:hidden}.mejs-container{position:relative;background:#000;font-family:Helvetica,Arial,serif;text-align:left;vertical-align:top;text-indent:0}.mejs-fill-container,.mejs-fill-container .mejs-container{width:100%;height:100%}.mejs-fill-container{overflow:hidden}.mejs-container:focus{outline:0}.me-plugin{position:absolute}.mejs-embed,.mejs-embed body{width:100%;height:100%;margin:0;padding:0;background:#000;overflow:hidden}.mejs-fullscreen{overflow:hidden!important}.mejs-container-fullscreen{position:fixed;left:0;top:0;right:0;bottom:0;overflow:hidden;z-index:1000}.mejs-container-fullscreen .mejs-mediaelement,.mejs-container-fullscreen video{width:100%;height:100%}.mejs-clear{clear:both}.mejs-background{position:absolute;top:0;left:0}.mejs-mediaelement{position:absolute;top:0;left:0;width:100%;height:100%}.mejs-poster{position:absolute;top:0;left:0;background-size:contain;background-position:50% 50%;background-repeat:no-repeat}:root .mejs-poster img{display:none}.mejs-poster img{border:0;padding:0}.mejs-overlay{position:absolute;top:0;left:0}.mejs-overlay-play{cursor:pointer}.mejs-overlay-button{position:absolute;top:50%;left:50%;width:100px;height:100px;margin:-50px 0 0 -50px;background:url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/746c3af7a145a09239a36e5ef61cfea0.svg) no-repeat}.no-svg .mejs-overlay-button{background-image:url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/716436fb3df0d29e6b37dd62d952676a.png)}.mejs-overlay:hover .mejs-overlay-button{background-position:0 -100px}.mejs-overlay-loading{position:absolute;top:50%;left:50%;width:80px;height:80px;margin:-40px 0 0 -40px;background:#333;background:url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/703c659e4bf563a05c6338a1727e006c.png);background:rgba(0,0,0,.9);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(50,50,50,.9)),to(rgba(0,0,0,.9)));background:-webkit-linear-gradient(top,rgba(50,50,50,.9),rgba(0,0,0,.9));background:-moz-linear-gradient(top,rgba(50,50,50,.9),rgba(0,0,0,.9));background:-o-linear-gradient(top,rgba(50,50,50,.9),rgba(0,0,0,.9));background:-ms-linear-gradient(top,rgba(50,50,50,.9),rgba(0,0,0,.9));background:linear-gradient(rgba(50,50,50,.9),rgba(0,0,0,.9))}.mejs-overlay-loading span{display:block;width:80px;height:80px;background:transparent url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/76b326f4d44222126fee21076595bef5.gif) 50% 50% no-repeat}.mejs-container .mejs-controls{position:absolute;list-style-type:none;margin:0;padding:0;bottom:0;left:0;background:url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/703c659e4bf563a05c6338a1727e006c.png);background:rgba(0,0,0,.7);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(50,50,50,.7)),to(rgba(0,0,0,.7)));background:-webkit-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:-moz-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:-o-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:-ms-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:linear-gradient(rgba(50,50,50,.7),rgba(0,0,0,.7));height:30px;width:100%}.mejs-container .mejs-controls div{list-style-type:none;background-image:none;display:block;float:left;margin:0;padding:0;width:26px;height:26px;font-size:11px;line-height:11px;font-family:Helvetica,Arial,serif;border:0}.mejs-controls .mejs-button button{cursor:pointer;display:block;font-size:0;line-height:0;text-decoration:none;margin:7px 5px;padding:0;position:absolute;height:16px;width:16px;border:0;background:transparent url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/40f56f5a736da4effeb790cedb8a52f0.svg) no-repeat}.no-svg .mejs-controls .mejs-button button{background-image:url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/24a0227fbdd3acfd86ff03fc3fc6c8a4.png)}.mejs-controls .mejs-button button:focus{outline:dotted 1px #999}.mejs-container .mejs-controls .mejs-time{color:#fff;display:block;height:17px;width:auto;padding:10px 3px 0;overflow:hidden;text-align:center;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}.mejs-container .mejs-controls .mejs-time a{color:#fff;font-size:11px;line-height:12px;display:block;float:left;margin:1px 2px 0 0;width:auto}.mejs-controls .mejs-play button{background-position:0 0}.mejs-controls .mejs-pause button{background-position:0 -16px}.mejs-controls .mejs-stop button{background-position:-112px 0}.mejs-controls div.mejs-time-rail{direction:ltr;width:200px;padding-top:5px}.mejs-controls .mejs-time-rail span,.mejs-controls .mejs-time-rail a{display:block;position:absolute;width:180px;height:10px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;cursor:pointer}.mejs-controls .mejs-time-rail .mejs-time-total{margin:5px;background:#333;background:rgba(50,50,50,.8);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(30,30,30,.8)),to(rgba(60,60,60,.8)));background:-webkit-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:-moz-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:-o-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:-ms-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:linear-gradient(rgba(30,30,30,.8),rgba(60,60,60,.8))}.mejs-controls .mejs-time-rail .mejs-time-buffering{width:100%;background-image:-o-linear-gradient(-45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:-webkit-gradient(linear,0 100%,100% 0,color-stop(0.25,rgba(255,255,255,.15)),color-stop(0.25,transparent),color-stop(0.5,transparent),color-stop(0.5,rgba(255,255,255,.15)),color-stop(0.75,rgba(255,255,255,.15)),color-stop(0.75,transparent),to(transparent));background-image:-webkit-linear-gradient(-45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:-moz-linear-gradient(-45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:-ms-linear-gradient(-45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:linear-gradient(-45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);-webkit-background-size:15px 15px;-moz-background-size:15px 15px;-o-background-size:15px 15px;background-size:15px 15px;-webkit-animation:buffering-stripes 2s linear infinite;-moz-animation:buffering-stripes 2s linear infinite;-ms-animation:buffering-stripes 2s linear infinite;-o-animation:buffering-stripes 2s linear infinite;animation:buffering-stripes 2s linear infinite}@-webkit-keyframes buffering-stripes{from{background-position:0 0}to{background-position:30px 0}}@-moz-keyframes buffering-stripes{from{background-position:0 0}to{background-position:30px 0}}@-ms-keyframes buffering-stripes{from{background-position:0 0}to{background-position:30px 0}}@-o-keyframes buffering-stripes{from{background-position:0 0}to{background-position:30px 0}}@keyframes buffering-stripes{from{background-position:0 0}to{background-position:30px 0}}.mejs-controls .mejs-time-rail .mejs-time-loaded{background:#3caac8;background:rgba(60,170,200,.8);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(44,124,145,.8)),to(rgba(78,183,212,.8)));background:-webkit-linear-gradient(top,rgba(44,124,145,.8),rgba(78,183,212,.8));background:-moz-linear-gradient(top,rgba(44,124,145,.8),rgba(78,183,212,.8));background:-o-linear-gradient(top,rgba(44,124,145,.8),rgba(78,183,212,.8));background:-ms-linear-gradient(top,rgba(44,124,145,.8),rgba(78,183,212,.8));background:linear-gradient(rgba(44,124,145,.8),rgba(78,183,212,.8));width:0}.mejs-controls .mejs-time-rail .mejs-time-current{background:#fff;background:rgba(255,255,255,.8);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(255,255,255,.9)),to(rgba(200,200,200,.8)));background:-webkit-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:-moz-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:-o-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:-ms-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:linear-gradient(rgba(255,255,255,.9),rgba(200,200,200,.8));width:0}.mejs-controls .mejs-time-rail .mejs-time-handle{display:none;position:absolute;margin:0;width:10px;background:#fff;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;cursor:pointer;border:solid 2px #333;top:-2px;text-align:center}.mejs-controls .mejs-time-rail .mejs-time-float{position:absolute;display:none;background:#eee;width:36px;height:17px;border:solid 1px #333;top:-26px;margin-left:-18px;text-align:center;color:#111}.mejs-controls .mejs-time-rail .mejs-time-float-current{margin:2px;width:30px;display:block;text-align:center;left:0}.mejs-controls .mejs-time-rail .mejs-time-float-corner{position:absolute;display:block;width:0;height:0;line-height:0;border:solid 5px #eee;border-color:#eee transparent transparent;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;top:15px;left:13px}.mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float{width:48px}.mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float-current{width:44px}.mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float-corner{left:18px}.mejs-controls .mejs-fullscreen-button button{background-position:-32px 0}.mejs-controls .mejs-unfullscreen button{background-position:-32px -16px}.mejs-controls .mejs-volume-button{}.mejs-controls .mejs-mute button{background-position:-16px -16px}.mejs-controls .mejs-unmute button{background-position:-16px 0}.mejs-controls .mejs-volume-button{position:relative}.mejs-controls .mejs-volume-button .mejs-volume-slider{height:115px;width:25px;background:url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/703c659e4bf563a05c6338a1727e006c.png);background:rgba(50,50,50,.7);-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;top:-115px;left:0;z-index:1;position:absolute;margin:0}.mejs-controls .mejs-volume-button:hover{-webkit-border-radius:0 0 4px 4px;-moz-border-radius:0 0 4px 4px;border-radius:0 0 4px 4px}.mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-total{position:absolute;left:11px;top:8px;width:2px;height:100px;background:#ddd;background:rgba(255,255,255,.5);margin:0}.mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-current{position:absolute;left:11px;top:8px;width:2px;height:100px;background:#ddd;background:rgba(255,255,255,.9);margin:0}.mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-handle{position:absolute;left:4px;top:-3px;width:16px;height:6px;background:#ddd;background:rgba(255,255,255,.9);cursor:N-resize;-webkit-border-radius:1px;-moz-border-radius:1px;border-radius:1px;margin:0}.mejs-controls a.mejs-horizontal-volume-slider{height:26px;width:56px;position:relative;display:block;float:left;vertical-align:middle}.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total{position:absolute;left:0;top:11px;width:50px;height:8px;margin:0;padding:0;font-size:1px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background:#333;background:rgba(50,50,50,.8);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(30,30,30,.8)),to(rgba(60,60,60,.8)));background:-webkit-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:-moz-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:-o-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:-ms-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:linear-gradient(rgba(30,30,30,.8),rgba(60,60,60,.8))}.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current{position:absolute;left:0;top:11px;width:50px;height:8px;margin:0;padding:0;font-size:1px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background:#fff;background:rgba(255,255,255,.8);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(255,255,255,.9)),to(rgba(200,200,200,.8)));background:-webkit-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:-moz-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:-o-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:-ms-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:linear-gradient(rgba(255,255,255,.9),rgba(200,200,200,.8))}.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-handle{display:none}.mejs-controls .mejs-captions-button{position:relative}.mejs-controls .mejs-captions-button button{background-position:-48px 0}.mejs-controls .mejs-captions-button .mejs-captions-selector{position:absolute;bottom:26px;right:-51px;width:85px;height:100px;background:url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/703c659e4bf563a05c6338a1727e006c.png);background:rgba(50,50,50,.7);border:solid 1px transparent;padding:10px 10px 0;overflow:hidden;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}.mejs-controls .mejs-captions-button .mejs-captions-selector ul{margin:0;padding:0;display:block;list-style-type:none!important;overflow:hidden}.mejs-controls .mejs-captions-button .mejs-captions-selector ul li{margin:0 0 6px;padding:0;list-style-type:none!important;display:block;color:#fff;overflow:hidden}.mejs-controls .mejs-captions-button .mejs-captions-selector ul li input{clear:both;float:left;margin:3px 3px 0 5px}.mejs-controls .mejs-captions-button .mejs-captions-selector ul li label{width:55px;float:left;padding:4px 0 0;line-height:15px;font-family:Helvetica,Arial,serif;font-size:10px}.mejs-controls .mejs-captions-button .mejs-captions-translations{font-size:10px;margin:0 0 5px}.mejs-chapters{position:absolute;top:0;left:0;border-right:solid 1px #fff;width:10000px;z-index:1}.mejs-chapters .mejs-chapter{position:absolute;float:left;background:#222;background:rgba(0,0,0,.7);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(50,50,50,.7)),to(rgba(0,0,0,.7)));background:-webkit-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:-moz-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:-o-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:-ms-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:linear-gradient(rgba(50,50,50,.7),rgba(0,0,0,.7));filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#323232, endColorstr=#000000);overflow:hidden;border:0}.mejs-chapters .mejs-chapter .mejs-chapter-block{font-size:11px;color:#fff;padding:5px;display:block;border-right:solid 1px #333;border-bottom:solid 1px #333;cursor:pointer}.mejs-chapters .mejs-chapter .mejs-chapter-block-last{border-right:0}.mejs-chapters .mejs-chapter .mejs-chapter-block:hover{background:#666;background:rgba(102,102,102,.7);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(102,102,102,.7)),to(rgba(50,50,50,.6)));background:-webkit-linear-gradient(top,rgba(102,102,102,.7),rgba(50,50,50,.6));background:-moz-linear-gradient(top,rgba(102,102,102,.7),rgba(50,50,50,.6));background:-o-linear-gradient(top,rgba(102,102,102,.7),rgba(50,50,50,.6));background:-ms-linear-gradient(top,rgba(102,102,102,.7),rgba(50,50,50,.6));background:linear-gradient(rgba(102,102,102,.7),rgba(50,50,50,.6));filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#666666, endColorstr=#323232)}.mejs-chapters .mejs-chapter .mejs-chapter-block .ch-title{font-size:12px;font-weight:700;display:block;white-space:nowrap;text-overflow:ellipsis;margin:0 0 3px;line-height:12px}.mejs-chapters .mejs-chapter .mejs-chapter-block .ch-timespan{font-size:12px;line-height:12px;margin:3px 0 4px;display:block;white-space:nowrap;text-overflow:ellipsis}.mejs-captions-layer{position:absolute;bottom:0;left:0;text-align:center;line-height:20px;font-size:16px;color:#fff}.mejs-captions-layer a{color:#fff;text-decoration:underline}.mejs-captions-layer[lang=ar]{font-size:20px;font-weight:400}.mejs-captions-position{position:absolute;width:100%;bottom:15px;left:0}.mejs-captions-position-hover{bottom:35px}.mejs-captions-text,.mejs__captions-text *{padding:0;background:url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/703c659e4bf563a05c6338a1727e006c.png);background:rgba(20,20,20,.5);white-space:pre-wrap;-webkit-box-shadow:5px 0 0 rgba(20,20,20,.5),-5px 0 0 rgba(20,20,20,.5);box-shadow:5px 0 0 rgba(20,20,20,.5),-5px 0 0 rgba(20,20,20,.5)}.me-cannotplay{}.me-cannotplay a{color:#fff;font-weight:700}.me-cannotplay span{padding:15px;display:block}.mejs-controls .mejs-loop-off button{background-position:-64px -16px}.mejs-controls .mejs-loop-on button{background-position:-64px 0}.mejs-controls .mejs-backlight-off button{background-position:-80px -16px}.mejs-controls .mejs-backlight-on button{background-position:-80px 0}.mejs-controls .mejs-picturecontrols-button{background-position:-96px 0}.mejs-contextmenu{position:absolute;width:150px;padding:10px;border-radius:4px;top:0;left:0;background:#fff;border:solid 1px #999;z-index:1001}.mejs-contextmenu .mejs-contextmenu-separator{height:1px;font-size:0;margin:5px 6px;background:#333}.mejs-contextmenu .mejs-contextmenu-item{font-family:Helvetica,Arial,serif;font-size:12px;padding:4px 6px;cursor:pointer;color:#333}.mejs-contextmenu .mejs-contextmenu-item:hover{background:#2C7C91;color:#fff}.mejs-controls .mejs-sourcechooser-button{position:relative}.mejs-controls .mejs-sourcechooser-button button{background-position:-128px 0}.mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector{position:absolute;bottom:26px;right:-10px;width:130px;height:100px;background:url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/703c659e4bf563a05c6338a1727e006c.png);background:rgba(50,50,50,.7);border:solid 1px transparent;padding:10px;overflow:hidden;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}.mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul{margin:0;padding:0;display:block;list-style-type:none!important;overflow:hidden}.mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li{margin:0 0 6px;padding:0;list-style-type:none!important;display:block;color:#fff;overflow:hidden}.mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li input{clear:both;float:left;margin:3px 3px 0 5px}.mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li label{width:100px;float:left;padding:4px 0 0;line-height:15px;font-family:Helvetica,Arial,serif;font-size:10px}.mejs-postroll-layer{position:absolute;bottom:0;left:0;width:100%;height:100%;background:url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/703c659e4bf563a05c6338a1727e006c.png);background:rgba(50,50,50,.7);z-index:1000;overflow:hidden}.mejs-postroll-layer-content{width:100%;height:100%}.mejs-postroll-close{position:absolute;right:0;top:0;background:url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/703c659e4bf563a05c6338a1727e006c.png);background:rgba(50,50,50,.7);color:#fff;padding:4px;z-index:100;cursor:pointer}div.mejs-speed-button{width:46px!important;position:relative}.mejs-controls .mejs-button.mejs-speed-button button{background:transparent;width:36px;font-size:11px;line-height:normal;color:#fff}.mejs-controls .mejs-speed-button .mejs-speed-selector{position:absolute;top:-100px;left:-10px;width:60px;height:100px;background:url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/703c659e4bf563a05c6338a1727e006c.png);background:rgba(50,50,50,.7);border:solid 1px transparent;padding:0;overflow:hidden;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}.mejs-controls .mejs-speed-button .mejs-speed-selector ul li label.mejs-speed-selected{color:rgba(33,248,248,1)}.mejs-controls .mejs-speed-button .mejs-speed-selector ul{margin:0;padding:0;display:block;list-style-type:none!important;overflow:hidden}.mejs-controls .mejs-speed-button .mejs-speed-selector ul li{margin:0 0 6px;padding:0 10px;list-style-type:none!important;display:block;color:#fff;overflow:hidden}.mejs-controls .mejs-speed-button .mejs-speed-selector ul li input{clear:both;float:left;margin:3px 3px 0 5px}.mejs-controls .mejs-speed-button .mejs-speed-selector ul li label{width:60px;float:left;padding:4px 0 0;line-height:15px;font-family:Helvetica,Arial,serif;font-size:11px;color:#fff;margin-left:5px;cursor:pointer}.mejs-controls .mejs-speed-button .mejs-speed-selector ul li:hover{background-color:#c8c8c8!important;background-color:rgba(255,255,255,.4)!important}.mejs-controls .mejs-button.mejs-jump-forward-button{background:transparent url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/15e1ac8cbacc2efdf1ac2677de48a253.png) no-repeat 3px 3px}.mejs-controls .mejs-button.mejs-jump-forward-button button{background:transparent;font-size:9px;line-height:normal;color:#fff}.mejs-controls .mejs-button.mejs-skip-back-button{background:transparent url(https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/cd6dc830eb45b3a5a96bbc936ff54846.png) no-repeat 3px 3px}.mejs-controls .mejs-button.mejs-skip-back-button button{background:transparent;font-size:9px;line-height:normal;color:#fff}</style><style type="text/css">/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* customizations to mediaelementplayer css */
+
+/*
+  Because this file is not proccessed by our brandable_css sass pipeline,
+  it cannot use our sass-direction helpers. So we have to handle RTL manually
+  by putting direction-specific styles in [dir="ltr"] or [dir="rtl"] blocks.
+*/
+/* stylelint-disable property-disallowed-list, declaration-property-value-disallowed-list */
+
+/* good menu widths */
+.mejs-sourcechooser-selector {
+  width: 160px;
+}
+.mejs-sourcechooser-selector label {
+  width: 160px !important;
+}
+
+.mejs-captions-selector {
+  width: 105px;
+}
+[dir="ltr"]  .mejs-captions-selector { text-align: left }
+[dir="rtl"]  .mejs-captions-selector { text-align: right }
+
+.mejs-captions-selector label {
+  width: 70px !important;
+}
+
+/* Subtitile upload link */
+.mejs-captions-selector .upload-track {
+  color: white;
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+[dir="ltr"] .mejs-captions-selector .upload-track {
+  margin-right: 0px;
+  margin-left: 5px;
+  float: left;
+}
+[dir="rtl"] .mejs-captions-selector .upload-track {
+  margin-left: 0px;
+  margin-right: 5px;
+  float: right;
+}
+
+/* "x" button to remove a subtitle */
+.mejs-captions-selector a[data-remove] {
+  position: absolute;
+  top: 0;
+  color: white;
+}
+[dir="ltr"] .mejs-captions-selector a[data-remove] { right: 0 }
+[dir="rtl"] .mejs-captions-selector a[data-remove] { left: 0 }
+
+
+/* style menu items without a radio button */
+.mejs-button [role="menu"] {
+  padding: 0 !important;
+}
+ /* compensate for above 0 padding */
+ .mejs-button [role="menu"] ul li {
+  position: relative;
+  padding: 0 10px !important;
+}
+/* add a hover effect */
+.mejs-button [role="menu"] ul li:hover {
+  background-color: #c8c8c8 !important;
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+.mejs-button [role="menu"] ul li input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+}
+.mejs-button [role="menu"] ul li label {
+  cursor: pointer;
+}
+[dir="ltr"] .mejs-button [role="menu"] ul li label { margin-left: 5px }
+[dir="rtl"] .mejs-button [role="menu"] ul li label { margin-right: 5px }
+
+
+.mejs-button [role="menu"] label.mejs-selected {
+  color: #21f8f8 !important;
+}
+
+/* stylelint-enable property-disallowed-list, declaration-property-value-disallowed-list */
+</style><style type="text/css" data-glamor=""></style><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/TextEntry-c-b642df1015.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/60956-c-b9258f7c43.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/60822-c-555705f57c.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/80204-c-98309dd876.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/2474-c-7b05be5fbb.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/CommentsTrayBody-c-c870da7831.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/MediaAttempt-c-c20db7a0f7.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/49653-c-5d39d7e3af.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/67270-c-2dfb5e8a24.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/FileUpload-c-62464f5bd7.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/UrlEntry-c-4a17000bb2.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/85078-c-b9210f7e08.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/LoggedOutTabs-c-a6619dc6fa.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/RubricsQuery-c-028d0ae0c8.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/RubricTab-c-ba959218bc.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/FilePreview-c-e2399103bc.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/ExternalToolSubmission-c-8ec2ae0a94.js"><link rel="prefetch" as="script" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/StudentAnnotationAttempt-c-3b4d76ac49.js"><style type="text/css">.__react_component_tooltip {
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 13px;
+  left: -999em;
+  opacity: 0;
+  padding: 8px 21px;
+  position: fixed;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+  top: -999em;
+  visibility: hidden;
+  z-index: 999;
+}
+.__react_component_tooltip.allow_hover, .__react_component_tooltip.allow_click {
+  pointer-events: auto;
+}
+.__react_component_tooltip:before, .__react_component_tooltip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+.__react_component_tooltip.show {
+  opacity: 0.9;
+  margin-top: 0px;
+  margin-left: 0px;
+  visibility: visible;
+}
+.__react_component_tooltip.type-dark {
+  color: #fff;
+  background-color: #222;
+}
+.__react_component_tooltip.type-dark.place-top:after {
+  border-top-color: #222;
+  border-top-style: solid;
+  border-top-width: 6px;
+}
+.__react_component_tooltip.type-dark.place-bottom:after {
+  border-bottom-color: #222;
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
+}
+.__react_component_tooltip.type-dark.place-left:after {
+  border-left-color: #222;
+  border-left-style: solid;
+  border-left-width: 6px;
+}
+.__react_component_tooltip.type-dark.place-right:after {
+  border-right-color: #222;
+  border-right-style: solid;
+  border-right-width: 6px;
+}
+.__react_component_tooltip.type-dark.border {
+  border: 1px solid #fff;
+}
+.__react_component_tooltip.type-dark.border.place-top:before {
+  border-top: 8px solid #fff;
+}
+.__react_component_tooltip.type-dark.border.place-bottom:before {
+  border-bottom: 8px solid #fff;
+}
+.__react_component_tooltip.type-dark.border.place-left:before {
+  border-left: 8px solid #fff;
+}
+.__react_component_tooltip.type-dark.border.place-right:before {
+  border-right: 8px solid #fff;
+}
+.__react_component_tooltip.type-success {
+  color: #fff;
+  background-color: #8DC572;
+}
+.__react_component_tooltip.type-success.place-top:after {
+  border-top-color: #8DC572;
+  border-top-style: solid;
+  border-top-width: 6px;
+}
+.__react_component_tooltip.type-success.place-bottom:after {
+  border-bottom-color: #8DC572;
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
+}
+.__react_component_tooltip.type-success.place-left:after {
+  border-left-color: #8DC572;
+  border-left-style: solid;
+  border-left-width: 6px;
+}
+.__react_component_tooltip.type-success.place-right:after {
+  border-right-color: #8DC572;
+  border-right-style: solid;
+  border-right-width: 6px;
+}
+.__react_component_tooltip.type-success.border {
+  border: 1px solid #fff;
+}
+.__react_component_tooltip.type-success.border.place-top:before {
+  border-top: 8px solid #fff;
+}
+.__react_component_tooltip.type-success.border.place-bottom:before {
+  border-bottom: 8px solid #fff;
+}
+.__react_component_tooltip.type-success.border.place-left:before {
+  border-left: 8px solid #fff;
+}
+.__react_component_tooltip.type-success.border.place-right:before {
+  border-right: 8px solid #fff;
+}
+.__react_component_tooltip.type-warning {
+  color: #fff;
+  background-color: #F0AD4E;
+}
+.__react_component_tooltip.type-warning.place-top:after {
+  border-top-color: #F0AD4E;
+  border-top-style: solid;
+  border-top-width: 6px;
+}
+.__react_component_tooltip.type-warning.place-bottom:after {
+  border-bottom-color: #F0AD4E;
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
+}
+.__react_component_tooltip.type-warning.place-left:after {
+  border-left-color: #F0AD4E;
+  border-left-style: solid;
+  border-left-width: 6px;
+}
+.__react_component_tooltip.type-warning.place-right:after {
+  border-right-color: #F0AD4E;
+  border-right-style: solid;
+  border-right-width: 6px;
+}
+.__react_component_tooltip.type-warning.border {
+  border: 1px solid #fff;
+}
+.__react_component_tooltip.type-warning.border.place-top:before {
+  border-top: 8px solid #fff;
+}
+.__react_component_tooltip.type-warning.border.place-bottom:before {
+  border-bottom: 8px solid #fff;
+}
+.__react_component_tooltip.type-warning.border.place-left:before {
+  border-left: 8px solid #fff;
+}
+.__react_component_tooltip.type-warning.border.place-right:before {
+  border-right: 8px solid #fff;
+}
+.__react_component_tooltip.type-error {
+  color: #fff;
+  background-color: #BE6464;
+}
+.__react_component_tooltip.type-error.place-top:after {
+  border-top-color: #BE6464;
+  border-top-style: solid;
+  border-top-width: 6px;
+}
+.__react_component_tooltip.type-error.place-bottom:after {
+  border-bottom-color: #BE6464;
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
+}
+.__react_component_tooltip.type-error.place-left:after {
+  border-left-color: #BE6464;
+  border-left-style: solid;
+  border-left-width: 6px;
+}
+.__react_component_tooltip.type-error.place-right:after {
+  border-right-color: #BE6464;
+  border-right-style: solid;
+  border-right-width: 6px;
+}
+.__react_component_tooltip.type-error.border {
+  border: 1px solid #fff;
+}
+.__react_component_tooltip.type-error.border.place-top:before {
+  border-top: 8px solid #fff;
+}
+.__react_component_tooltip.type-error.border.place-bottom:before {
+  border-bottom: 8px solid #fff;
+}
+.__react_component_tooltip.type-error.border.place-left:before {
+  border-left: 8px solid #fff;
+}
+.__react_component_tooltip.type-error.border.place-right:before {
+  border-right: 8px solid #fff;
+}
+.__react_component_tooltip.type-info {
+  color: #fff;
+  background-color: #337AB7;
+}
+.__react_component_tooltip.type-info.place-top:after {
+  border-top-color: #337AB7;
+  border-top-style: solid;
+  border-top-width: 6px;
+}
+.__react_component_tooltip.type-info.place-bottom:after {
+  border-bottom-color: #337AB7;
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
+}
+.__react_component_tooltip.type-info.place-left:after {
+  border-left-color: #337AB7;
+  border-left-style: solid;
+  border-left-width: 6px;
+}
+.__react_component_tooltip.type-info.place-right:after {
+  border-right-color: #337AB7;
+  border-right-style: solid;
+  border-right-width: 6px;
+}
+.__react_component_tooltip.type-info.border {
+  border: 1px solid #fff;
+}
+.__react_component_tooltip.type-info.border.place-top:before {
+  border-top: 8px solid #fff;
+}
+.__react_component_tooltip.type-info.border.place-bottom:before {
+  border-bottom: 8px solid #fff;
+}
+.__react_component_tooltip.type-info.border.place-left:before {
+  border-left: 8px solid #fff;
+}
+.__react_component_tooltip.type-info.border.place-right:before {
+  border-right: 8px solid #fff;
+}
+.__react_component_tooltip.type-light {
+  color: #222;
+  background-color: #fff;
+}
+.__react_component_tooltip.type-light.place-top:after {
+  border-top-color: #fff;
+  border-top-style: solid;
+  border-top-width: 6px;
+}
+.__react_component_tooltip.type-light.place-bottom:after {
+  border-bottom-color: #fff;
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
+}
+.__react_component_tooltip.type-light.place-left:after {
+  border-left-color: #fff;
+  border-left-style: solid;
+  border-left-width: 6px;
+}
+.__react_component_tooltip.type-light.place-right:after {
+  border-right-color: #fff;
+  border-right-style: solid;
+  border-right-width: 6px;
+}
+.__react_component_tooltip.type-light.border {
+  border: 1px solid #222;
+}
+.__react_component_tooltip.type-light.border.place-top:before {
+  border-top: 8px solid #222;
+}
+.__react_component_tooltip.type-light.border.place-bottom:before {
+  border-bottom: 8px solid #222;
+}
+.__react_component_tooltip.type-light.border.place-left:before {
+  border-left: 8px solid #222;
+}
+.__react_component_tooltip.type-light.border.place-right:before {
+  border-right: 8px solid #222;
+}
+.__react_component_tooltip.place-top {
+  margin-top: -10px;
+}
+.__react_component_tooltip.place-top:before {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  bottom: -8px;
+  left: 50%;
+  margin-left: -10px;
+}
+.__react_component_tooltip.place-top:after {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  bottom: -6px;
+  left: 50%;
+  margin-left: -8px;
+}
+.__react_component_tooltip.place-bottom {
+  margin-top: 10px;
+}
+.__react_component_tooltip.place-bottom:before {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: -8px;
+  left: 50%;
+  margin-left: -10px;
+}
+.__react_component_tooltip.place-bottom:after {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  top: -6px;
+  left: 50%;
+  margin-left: -8px;
+}
+.__react_component_tooltip.place-left {
+  margin-left: -10px;
+}
+.__react_component_tooltip.place-left:before {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  right: -8px;
+  top: 50%;
+  margin-top: -5px;
+}
+.__react_component_tooltip.place-left:after {
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  right: -6px;
+  top: 50%;
+  margin-top: -4px;
+}
+.__react_component_tooltip.place-right {
+  margin-left: 10px;
+}
+.__react_component_tooltip.place-right:before {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  left: -8px;
+  top: 50%;
+  margin-top: -5px;
+}
+.__react_component_tooltip.place-right:after {
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  left: -6px;
+  top: 50%;
+  margin-top: -4px;
+}
+.__react_component_tooltip .multi-line {
+  display: block;
+  padding: 2px 0px;
+  text-align: center;
+}</style><link id="ek_css" rel="stylesheet" type="text/css" href="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/style.min.css"></head>
+
+<body class="with-left-side course-menu-expanded assignments primary-nav-transitions full-width context-course_13814 responsive_student_grades_page ff no-touch evercourseServicesInitialized">
+
+<noscript>
+  <div role="alert" class="ic-flash-static ic-flash-error">
+    <div class="ic-flash__icon" aria-hidden="true">
+      <i class="icon-warning"></i>
+    </div>
+    <h1>You need to have JavaScript enabled in order to access this site.</h1>
+  </div>
+</noscript>
+
+
+
+
+<div id="flash_message_holder"></div>
+<div id="flash_screenreader_holder" role="alert" class="screenreader-only" aria-live="assertive" aria-relevant="additions text" aria-atomic="false"></div>
+
+<div id="application" class="ic-app">
+  
+
+
+
+<header id="mobile-header" class="no-print">
+  <button type="button" class="Button Button--icon-action-rev Button--large mobile-header-hamburger">
+    <i class="icon-solid icon-hamburger"></i>
+    <span id="mobileHeaderInboxUnreadBadge" class="menu-item__badge" style="min-width: 0px; top: 12px; height: 12px; right: 6px;"></span>
+    <span class="screenreader-only">Dashboard</span>
+  </button>
+  <div class="mobile-header-space"></div>
+    <a class="mobile-header-title expandable" href="https://msoe.instructure.com/courses/13814" role="button" aria-controls="mobileContextNavContainer">
+      <div>CS 3450 Combined</div>
+        <div>Assignments</div>
+    </a>
+    <div id="immersive_reader_mobile_mount_point"><div><button cursor="pointer" type="button" tabindex="0" class="fOyUs_bGBk fOyUs_fKyb fOyUs_cuDs fOyUs_cBHs fOyUs_eWbJ fOyUs_fmDy fOyUs_eeJl fOyUs_cBtr fOyUs_fuTR fOyUs_cnfU fQfxa_bGBk" style="margin: 0px; padding: 0px; border-radius: 0.25rem; border-width: 0px; width: auto; cursor: pointer;"><span class="fQfxa_caGd fQfxa_fKcQ fQfxa_buuG fQfxa_ImeN undefined fQfxa_dqAF"><span direction="row" wrap="no-wrap" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_eRIA bDzpk_fZWR bDzpk_qOas" style="width: 100%; height: 100%;"><span class="fOyUs_bGBk dJCgj_bGBk" style="padding: 0px 0.5rem 0px 0px;"><span class="fQfxa_eoCh"><svg viewBox="0 0 40 37" rotate="0" style="width: 1em; height: 1em;" width="1em" height="1em" aria-hidden="true" role="presentation" focusable="false" class="dUOHu_bGBk dUOHu_drOs dUOHu_eXrk cGqzL_bGBk"><g role="presentation">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g fill-rule="nonzero">
+            <path d="M37.4,0.9 L37.4,9.6 L35.4,9.6 L35.4,2.9 L24.4,2.9 C22.9,3.3 20,4.5 20,6 L20,17.2 L18,17.2 L18,6 C18,5 15.6,3.6 13.8,2.9 L2,2.9 L2,29 L12.4,29 L12.4,31 L0,31 L0,0.9 L14.1,0.9 L14.3,1 C15,1.2 17.5,2.2 18.9,3.7 C20.5,1.9 23.5,1.1 23.9,1 L24.1,1 L37.4,1 L37.4,0.9 Z" fill="#000000"></path>
+            <path d="M27.4,37 L25.8,37 L18.4,29.4 L14,29.4 L14,21 L18.4,20.9 L26.1,13 L27.4,13 L27.4,37 Z M16,27.4 L19.2,27.4 L25.3,33.7 L25.3,16.6 L19.2,22.9 L15.9,22.9 L15.9,27.4 L16,27.4 Z" fill="#0197F2"></path>
+            <path d="M31.3,32.7 L29.6,31.7 C29.6,31.7 31.7,28.3 31.7,25.2 C31.7,21.9 29.6,18.5 29.6,18.4 L31.3,17.4 C31.4,17.6 33.7,21.3 33.7,25.2 C33.7,28.8 31.4,32.6 31.3,32.7 Z" fill="#0197F2"></path>
+            <path d="M36.4,36.2 L34.8,35 C34.8,35 38,30.8 38,25.2 C38,19.6 34.8,15.4 34.8,15.4 L36.4,14.2 C36.5,14.4 40,19 40,25.3 C40,31.5 36.5,36 36.4,36.2 Z" fill="#0197F2"></path>
+        </g>
+    </g>
+</g></svg></span></span><span class="fOyUs_bGBk dJCgj_bGBk dJCgj_dfFp"><span class="fQfxa_biBD">Immersive Reader</span></span></span></span></button></div></div>
+    <div class="mobile-header-space"></div>
+    <button type="button" class="Button Button--icon-action-rev Button--large mobile-header-arrow" aria-label="Navigation Menu">
+      <i class="icon-arrow-open-down" id="mobileHeaderArrowIcon"></i>
+    </button>
+</header>
+<nav id="mobileContextNavContainer"></nav>
+
+<header id="header" class="ic-app-header no-print ">
+  <a href="#content" id="skip_navigation_link">Skip To Content</a>
+  <div role="region" class="ic-app-header__main-navigation" aria-label="Global Navigation">
+      <div class="ic-app-header__logomark-container">
+        <a href="https://msoe.instructure.com/" class="ic-app-header__logomark">
+          <span class="screenreader-only">Dashboard</span>
+        </a>
+      </div>
+    <ul id="menu" class="ic-app-header__menu-list">
+        <li class="menu-item ic-app-header__menu-list-item ">
+          <a id="global_nav_profile_link" role="button" href="https://msoe.instructure.com/profile/settings" class="ic-app-header__menu-list-link">
+            <div class="menu-item-icon-container">
+              <div aria-hidden="true" class="fs-exclude ic-avatar ">
+                <img src="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/16c5d4e7-8c7d-40f1-a1d8-31a50c45e94e.png" alt="Sam Keyser">
+              </div>
+              <span class="menu-item__badge"></span>
+            </div>
+            <div class="menu-item__text">
+              Account
+            </div>
+          </a>
+        </li>
+      <li class="ic-app-header__menu-list-item ">
+        <a id="global_nav_dashboard_link" href="https://msoe.instructure.com/" class="ic-app-header__menu-list-link">
+          <div class="menu-item-icon-container" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--dashboard" version="1.1" x="0" y="0" viewBox="0 0 280 200" enable-background="new 0 0 280 200" xml:space="preserve"><path d="M273.09,180.75H197.47V164.47h62.62A122.16,122.16,0,1,0,17.85,142a124,124,0,0,0,2,22.51H90.18v16.29H6.89l-1.5-6.22A138.51,138.51,0,0,1,1.57,142C1.57,65.64,63.67,3.53,140,3.53S278.43,65.64,278.43,142a137.67,137.67,0,0,1-3.84,32.57ZM66.49,87.63,50.24,71.38,61.75,59.86,78,76.12Zm147,0L202,76.12l16.25-16.25,11.51,11.51ZM131.85,53.82v-23h16.29v23Zm15.63,142.3a31.71,31.71,0,0,1-28-16.81c-6.4-12.08-15.73-72.29-17.54-84.25a8.15,8.15,0,0,1,13.58-7.2c8.88,8.21,53.48,49.72,59.88,61.81a31.61,31.61,0,0,1-27.9,46.45ZM121.81,116.2c4.17,24.56,9.23,50.21,12,55.49A15.35,15.35,0,1,0,161,157.3C158.18,152,139.79,133.44,121.81,116.2Z"></path></svg>
+
+          </div>
+          <div class="menu-item__text">
+            Dashboard
+          </div>
+        </a>
+      </li>
+        <li class="menu-item ic-app-header__menu-list-item ic-app-header__menu-list-item--active">
+          <a id="global_nav_courses_link" role="button" href="https://msoe.instructure.com/courses" class="ic-app-header__menu-list-link">
+            <div class="menu-item-icon-container" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--courses" version="1.1" x="0" y="0" viewBox="0 0 280 259" enable-background="new 0 0 280 259" xml:space="preserve"><path d="M73.31,198c-11.93,0-22.22,8-24,18.73a26.67,26.67,0,0,0-.3,3.63v.3a22,22,0,0,0,5.44,14.65,22.47,22.47,0,0,0,17.22,8H200V228.19h-134V213.08H200V198Zm21-105.74h90.64V62H94.3ZM79.19,107.34V46.92H200v60.42Zm7.55,30.21V122.45H192.49v15.11ZM71.65,16.71A22.72,22.72,0,0,0,49,39.36V190.88a41.12,41.12,0,0,1,24.32-8h157V16.71ZM33.88,39.36A37.78,37.78,0,0,1,71.65,1.6H245.36V198H215.15v45.32h22.66V258.4H71.65a37.85,37.85,0,0,1-37.76-37.76Z"></path></svg>
+
+            </div>
+            <div class="menu-item__text">
+              Courses
+            </div>
+          </a>
+        </li>
+        <li class="menu-item ic-app-header__menu-list-item ">
+          <a id="global_nav_groups_link" role="button" href="https://msoe.instructure.com/groups" class="ic-app-header__menu-list-link">
+            <div class="menu-item-icon-container" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--groups" viewBox="0 0 200 135"><path d="M134.5 129.4c0-1.1 0-19.8-6.2-31.1-4.5-8.5-16.4-12.4-35-19.2-1.7-.6-3.4-1.1-5.1-1.7v-8.5c5.6-5.1 8.5-12.4 8.5-20.3V29.4C96.6 13 83.6 0 67.2 0S37.9 13 37.9 29.4v19.2c0 7.3 3.4 14.7 8.5 20.3v8.5c-1.7.6-3.4 1.1-5.1 1.7-18.6 6.2-30.5 10.7-35 19.2C0 109.6 0 128.8 0 129.4c0 3.4 2.3 5.6 5.6 5.6h123.7c3.5 0 5.7-2.3 5.2-5.6zm-123.2-5.7c.6-5.6 1.7-14.7 3.4-19.8C17 98.8 30 94.3 43.5 89.8c2.8-1.1 5.6-2.3 9-3.4 2.3-.6 4-2.8 4-5.1V66.7c0-1.7-.6-3.4-1.7-4.5-4-3.4-6.2-8.5-6.2-13.6V29.4c0-10.2 7.9-18.1 18.1-18.1s18.1 7.9 18.1 18.1v19.2c0 5.1-2.3 10.2-6.2 13.6-1.1 1.1-1.7 2.8-1.7 4.5v14.7c0 2.3 1.7 4.5 4 5.1 2.8 1.1 6.2 2.3 9 3.4 13.6 5.1 26.6 9.6 28.8 14.1 2.8 5.1 4 13.6 4.5 19.8H11.3zM196 79.1c-2.8-6.2-11.3-9.6-22.6-13.6l-1.7-.6v-3.4c4.5-4 6.8-9.6 6.8-15.8V35c0-12.4-9.6-22-22-22s-22 10.2-22 22v10.7c0 6.2 2.3 11.9 6.8 15.8V65l-1.7.6c-7.3 2.8-13 4.5-16.9 7.3-1.7 1.1-2.3 2.8-2.3 5.1.6 1.7 1.7 3.4 3.4 4.5 7.9 4 12.4 7.3 14.1 10.7 2.3 4.5 4 10.2 5.1 18.1.6 2.3 2.8 4.5 5.6 4.5h45.8c3.4 0 5.6-2.8 5.6-5.1 0-3.9 0-24.3-4-31.6zm-42.9 25.4c-1.1-6.8-2.8-12.4-5.1-16.9-1.7-4-5.1-6.8-9.6-10.2 1.7-1.1 3.4-1.7 5.1-2.3l5.6-2.3c1.7-.6 3.4-2.8 3.4-5.1v-9.6c0-1.7-.6-3.4-2.3-4.5-2.8-1.7-4.5-5.1-4.5-8.5V34.5c0-6.2 4.5-10.7 10.7-10.7s10.7 5.1 10.7 10.7v10.7c0 3.4-1.7 6.2-4.5 8.5-1.1 1.1-2.3 2.8-2.3 4.5v10.2c0 2.3 1.1 4.5 3.4 5.1l5.6 2.3c6.8 2.3 15.3 5.6 16.4 7.9 1.7 2.8 2.8 12.4 2.8 20.9h-35.4z"></path></svg>
+
+            </div>
+            <div class="menu-item__text">
+              Groups
+            </div>
+          </a>
+        </li>
+      <li class="menu-item ic-app-header__menu-list-item ">
+        <a id="global_nav_calendar_link" href="https://msoe.instructure.com/calendar" class="ic-app-header__menu-list-link">
+          <div class="menu-item-icon-container" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--calendar" version="1.1" x="0" y="0" viewBox="0 0 280 280" enable-background="new 0 0 280 280" xml:space="preserve"><path d="M197.07,213.38h16.31V197.07H197.07Zm-16.31,16.31V180.76h48.92v48.92Zm-48.92-16.31h16.31V197.07H131.85Zm-16.31,16.31V180.76h48.92v48.92ZM66.62,213.38H82.93V197.07H66.62ZM50.32,229.68V180.76H99.24v48.92Zm146.75-81.53h16.31V131.85H197.07Zm-16.31,16.31V115.54h48.92v48.92Zm-48.92-16.31h16.31V131.85H131.85Zm-16.31,16.31V115.54h48.92v48.92ZM66.62,148.15H82.93V131.85H66.62ZM50.32,164.46V115.54H99.24v48.92ZM34,262.29H246V82.93H34ZM246,66.62V42.16A8.17,8.17,0,0,0,237.84,34H213.38v8.15a8.15,8.15,0,1,1-16.31,0V34H82.93v8.15a8.15,8.15,0,0,1-16.31,0V34H42.16A8.17,8.17,0,0,0,34,42.16V66.62Zm-8.15-48.92a24.49,24.49,0,0,1,24.46,24.46V278.6H17.71V42.16A24.49,24.49,0,0,1,42.16,17.71H66.62V9.55a8.15,8.15,0,0,1,16.31,0v8.15H197.07V9.55a8.15,8.15,0,1,1,16.31,0v8.15Z"></path></svg>
+
+          </div>
+          <div class="menu-item__text">
+            Calendar
+          </div>
+        </a>
+      </li>
+      <li class="menu-item ic-app-header__menu-list-item ">
+        <a id="global_nav_conversations_link" href="https://msoe.instructure.com/conversations" class="ic-app-header__menu-list-link">
+          <div class="menu-item-icon-container">
+            <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--inbox" version="1.1" x="0" y="0" viewBox="0 0 280 280" enable-background="new 0 0 280 280" xml:space="preserve"><path d="M91.72,120.75h96.56V104.65H91.72Zm0,48.28h80.47V152.94H91.72Zm0-96.56h80.47V56.37H91.72Zm160.94,34.88H228.52V10.78h-177v96.56H27.34A24.17,24.17,0,0,0,3.2,131.48V244.14a24.17,24.17,0,0,0,24.14,24.14H252.66a24.17,24.17,0,0,0,24.14-24.14V131.48A24.17,24.17,0,0,0,252.66,107.34Zm0,16.09a8.06,8.06,0,0,1,8,8v51.77l-32.19,19.31V123.44ZM67.58,203.91v-177H212.42v177ZM27.34,123.44H51.48v79.13L19.29,183.26V131.48A8.06,8.06,0,0,1,27.34,123.44ZM252.66,252.19H27.34a8.06,8.06,0,0,1-8-8V202l30,18H230.75l30-18v42.12A8.06,8.06,0,0,1,252.66,252.19Z"></path></svg>
+</span>
+            <span class="menu-item__badge"><span class="ergWt_bGBk">25 unread messages.</span><span aria-hidden="true">25</span></span>
+          </div>
+          <div class="menu-item__text">
+            Inbox
+          </div>
+        </a>
+      </li>
+        <li class="menu-item ic-app-header__menu-list-item">
+          <a id="global_nav_history_link" role="button" href="#" class="ic-app-header__menu-list-link">
+            <div class="menu-item-icon-container" aria-hidden="true">
+              <svg viewBox="0 0 1920 1920" class="ic-icon-svg menu-item__icon svg-icon-history" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <path d="M960 112.941c-467.125 0-847.059 379.934-847.059 847.059 0 467.125 379.934 847.059 847.059 847.059 467.125 0 847.059-379.934 847.059-847.059 0-467.125-379.934-847.059-847.059-847.059M960 1920C430.645 1920 0 1489.355 0 960S430.645 0 960 0s960 430.645 960 960-430.645 960-960 960m417.905-575.955L903.552 988.28V395.34h112.941v536.47l429.177 321.77-67.765 90.465z" stroke="none" stroke-width="1" fill-rule="evenodd"></path>
+</svg>
+            </div>
+            <div class="menu-item__text">
+              History
+            </div>
+          </a>
+        </li>
+        
+
+
+      <li class="ic-app-header__menu-list-item">
+        <a id="global_nav_help_link" role="button" class="ic-app-header__menu-list-link" data-track-category="help system" data-track-label="help button" href="http://help.instructure.com/">
+          <div class="menu-item-icon-container" role="presentation">
+              <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg menu-item__icon svg-icon-help" version="1.1" x="0" y="0" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve" fill="currentColor"><path d="M100,127.88A11.15,11.15,0,1,0,111.16,139,11.16,11.16,0,0,0,100,127.88Zm8.82-88.08a33.19,33.19,0,0,1,23.5,23.5,33.54,33.54,0,0,1-24,41.23,3.4,3.4,0,0,0-2.74,3.15v9.06H94.42v-9.06a14.57,14.57,0,0,1,11.13-14,22.43,22.43,0,0,0,13.66-10.27,22.73,22.73,0,0,0,2.31-17.37A21.92,21.92,0,0,0,106,50.59a22.67,22.67,0,0,0-19.68,3.88,22.18,22.18,0,0,0-8.65,17.64H66.54a33.25,33.25,0,0,1,13-26.47A33.72,33.72,0,0,1,108.82,39.8ZM100,5.2A94.8,94.8,0,1,0,194.8,100,94.91,94.91,0,0,0,100,5.2m0,178.45A83.65,83.65,0,1,1,183.65,100,83.73,83.73,0,0,1,100,183.65" transform="translate(-5.2 -5.2)"></path></svg>
+
+            <span class="menu-item__badge"></span>
+          </div>
+          <div class="menu-item__text">
+            Help
+          </div>
+</a>      </li>
+    </ul>
+  </div>
+  <div class="ic-app-header__secondary-navigation">
+    <ul class="ic-app-header__menu-list">
+      <li class="menu-item ic-app-header__menu-list-item">
+        <a id="primaryNavToggle" role="button" href="#" class="ic-app-header__menu-list-link ic-app-header__menu-list-link--nav-toggle" aria-label="Expand global navigation
+                " title="Expand global navigation
+                ">
+          <div class="menu-item-icon-container" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--navtoggle" version="1.1" x="0" y="0" width="40" height="32" viewBox="0 0 40 32" xml:space="preserve">
+  <path d="M39.5,30.28V2.48H37.18v27.8Zm-4.93-13.9L22.17,4,20.53,5.61l9.61,9.61H.5v2.31H30.14l-9.61,9.61,1.64,1.64Z"></path>
+</svg>
+
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div id="global_nav_tray_container"></div>
+  <div id="global_nav_tour"></div>
+</header>
+
+
+  <div id="instructure_ajax_error_box">
+    <div style="text-align: right; background-color: #fff;"><a href="#" class="close_instructure_ajax_error_box_link">Close</a></div>
+    <iframe id="instructure_ajax_error_result" src="Lab%201%20Predicting%20Runtimes%20on%20Rosie_files/a.html" style="border: 0;" title="Error"></iframe>
+  </div>
+
+  <div id="wrapper" class="ic-Layout-wrapper">
+      <div class="ic-app-nav-toggle-and-crumbs no-print">
+          <button type="button" id="courseMenuToggle" class="Button Button--link ic-app-course-nav-toggle" aria-live="polite" aria-label="Hide Courses Navigation Menu">
+            <i class="icon-hamburger" aria-hidden="true"></i>
+          </button>
+
+        <div class="ic-app-crumbs">
+            <nav id="breadcrumbs" role="navigation" aria-label="breadcrumbs"><ul><li class="home"><a href="https://msoe.instructure.com/"><span class="ellipsible"><i class="icon-home" title="My Dashboard">
+  <span class="screenreader-only">My Dashboard</span>
+</i>
+</span></a></li><li><a href="https://msoe.instructure.com/courses/13814"><span class="ellipsible">CS 3450 Combined</span></a></li><li><a href="https://msoe.instructure.com/courses/13814/assignments"><span class="ellipsible">Assignments</span></a></li></ul></nav>
+        </div>
+
+
+        <div class="right-of-crumbs">
+            <div class="TutorialToggleHolder"></div>
+            <div id="immersive_reader_mount_point"><div><button cursor="pointer" type="button" tabindex="0" class="fOyUs_bGBk fOyUs_fKyb fOyUs_cuDs fOyUs_cBHs fOyUs_eWbJ fOyUs_fmDy fOyUs_eeJl fOyUs_cBtr fOyUs_fuTR fOyUs_cnfU fQfxa_bGBk" style="margin: 0px; padding: 0px; border-radius: 0.25rem; border-width: 0px; width: auto; cursor: pointer;"><span class="fQfxa_caGd fQfxa_fKcQ fQfxa_buuG fQfxa_ImeN undefined fQfxa_dqAF"><span direction="row" wrap="no-wrap" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_eRIA bDzpk_fZWR bDzpk_qOas" style="width: 100%; height: 100%;"><span class="fOyUs_bGBk dJCgj_bGBk" style="padding: 0px 0.5rem 0px 0px;"><span class="fQfxa_eoCh"><svg viewBox="0 0 40 37" rotate="0" style="width: 1em; height: 1em;" width="1em" height="1em" aria-hidden="true" role="presentation" focusable="false" class="dUOHu_bGBk dUOHu_drOs dUOHu_eXrk cGqzL_bGBk"><g role="presentation">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g fill-rule="nonzero">
+            <path d="M37.4,0.9 L37.4,9.6 L35.4,9.6 L35.4,2.9 L24.4,2.9 C22.9,3.3 20,4.5 20,6 L20,17.2 L18,17.2 L18,6 C18,5 15.6,3.6 13.8,2.9 L2,2.9 L2,29 L12.4,29 L12.4,31 L0,31 L0,0.9 L14.1,0.9 L14.3,1 C15,1.2 17.5,2.2 18.9,3.7 C20.5,1.9 23.5,1.1 23.9,1 L24.1,1 L37.4,1 L37.4,0.9 Z" fill="#000000"></path>
+            <path d="M27.4,37 L25.8,37 L18.4,29.4 L14,29.4 L14,21 L18.4,20.9 L26.1,13 L27.4,13 L27.4,37 Z M16,27.4 L19.2,27.4 L25.3,33.7 L25.3,16.6 L19.2,22.9 L15.9,22.9 L15.9,27.4 L16,27.4 Z" fill="#0197F2"></path>
+            <path d="M31.3,32.7 L29.6,31.7 C29.6,31.7 31.7,28.3 31.7,25.2 C31.7,21.9 29.6,18.5 29.6,18.4 L31.3,17.4 C31.4,17.6 33.7,21.3 33.7,25.2 C33.7,28.8 31.4,32.6 31.3,32.7 Z" fill="#0197F2"></path>
+            <path d="M36.4,36.2 L34.8,35 C34.8,35 38,30.8 38,25.2 C38,19.6 34.8,15.4 34.8,15.4 L36.4,14.2 C36.5,14.4 40,19 40,25.3 C40,31.5 36.5,36 36.4,36.2 Z" fill="#0197F2"></path>
+        </g>
+    </g>
+</g></svg></span></span><span class="fOyUs_bGBk dJCgj_bGBk dJCgj_dfFp"><span class="fQfxa_biBD">Immersive Reader</span></span></span></span></button></div></div>
+        </div>
+
+      </div>
+    <div id="main" class="ic-Layout-columns">
+        <div class="ic-Layout-watermark"></div>
+        <div id="left-side" class="ic-app-course-menu ic-sticky-on list-view" style="display: block">
+          <div id="sticky-container" class="ic-sticky-frame">
+              <span id="section-tabs-header-subtitle" class="ellipsis">2022-2023 Spring Quarter</span>
+            <nav role="navigation" aria-label="Courses Navigation Menu"><ul id="section-tabs"><li class="section"><a href="https://msoe.instructure.com/courses/13814" class="home" tabindex="0">Home</a></li><li class="section"><a href="https://msoe.instructure.com/courses/13814/announcements" class="announcements" tabindex="0">Announcements</a></li><li class="section"><a href="https://msoe.instructure.com/courses/13814/modules" class="modules" tabindex="0">Modules</a></li><li class="section"><a href="https://msoe.instructure.com/courses/13814/grades" class="grades" tabindex="0">Grades<b class="nav-badge">12</b></a></li><li class="section"><a href="https://msoe.instructure.com/courses/13814/users" class="people" tabindex="0">People</a></li><li class="section"><a href="https://msoe.instructure.com/courses/13814/external_tools/436" class="context_external_tool_436 evalkit-ltilink" tabindex="0" style="display: block !important;"><b class="nav-badge evalkit-badge">1</b>Student Course Evaluations</a></li></ul></nav>
+          </div>
+        </div>
+      <div id="not_right_side" class="ic-app-main-content">
+        <div id="content-wrapper" class="ic-Layout-contentWrapper">
+          
+          <div id="content" class="ic-Layout-contentMain content-type-assignment content-type-group-qad" role="main">
+            
+          <div><div style="left: 26%; max-width: 1125px; position: fixed; right: 120px; top: 80px; z-index: 101;"></div><div data-testid="assignments-2-student-view"><div data-testid="assignment-student-header" id="assignments-2-student-header" class="assignment-student-header"><h1 class="fOyUs_bGBk blnAQ_bGBk blnAQ_fCtg blnAQ_drOs"><span class="ergWt_bGBk"> Lab 1: Predicting Runtimes on Rosie </span></h1><div wrap="wrap" direction="row" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_busO bDzpk_cCxO bDzpk_dyGy bDzpk_qOas" style="margin: 0px;"><span class="fOyUs_bGBk dJCgj_bGBk dJCgj_dfFp"><h2 data-test-id="title" class="fOyUs_bGBk blnAQ_bGBk blnAQ_cVrl blnAQ_drOs" style="margin: 0px; --blnAQ-h2FontWeight: 300;"><span class="bjXfh_daKB"><span>Lab 1: Predicting Runtimes on Rosie</span></span></h2><span data-testid="assignment-sub-header" wrap="normal" letter-spacing="normal" class="enRcg_bGBk enRcg_doqw enRcg_bdMA enRcg_eQnG"><span data-testid="friendly-date-time"><span class="ergWt_bGBk">Due: Tue Mar 14, 2023 8:30am</span><time data-test-id="due-date" prefix="Due:" format="%a %b %-d, %Y %-l:%M%P" datetime="2023-03-14T13:30:00.000Z" title="Mar 14 at 8:30am" aria-hidden="true"><span class="visible-desktop">Due: Tue Mar 14, 2023 8:30am</span><span class="hidden-desktop">3/14/2023</span></time></span></span></span><span class="fOyUs_bGBk dJCgj_bGBk dJCgj_zczv"><div direction="row" wrap="no-wrap" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_crdn bDzpk_fZWR bDzpk_qOas"><span class="fOyUs_bGBk dJCgj_bGBk" style="margin: 0px 0.5rem 0px 0px;"></span><span class="fOyUs_bGBk dJCgj_bGBk"><div><span class="ergWt_bGBk">100/100 Points</span><span aria-hidden="true" direction="column" wrap="no-wrap" class="fOyUs_bGBk fOyUs_dBtH fOyUs_desw bDzpk_bGBk bDzpk_busO bDzpk_cQFX bDzpk_bZNM"><span class="fOyUs_bGBk fOyUs_fKlg dJCgj_bGBk"><span data-testid="grade-display" transform="capitalize" wrap="normal" letter-spacing="normal" class="enRcg_bGBk enRcg_eoMd enRcg_fCZK enRcg_fNIu enRcg_eQnG">100/100 <span class="points-text">Points</span></span></span></span></div></span></div></span></div><span wrap="wrap" direction="row" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_busO bDzpk_fZWR bDzpk_dyGy bDzpk_qOas"><span class="fOyUs_bGBk dJCgj_bGBk dJCgj_zczv"><span wrap="wrap" direction="row" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_busO bDzpk_fZWR bDzpk_dyGy bDzpk_qOas"><span class="fOyUs_bGBk dJCgj_bGBk"><div class="fOyUs_bGBk"><span class="cCAhm_bGBk cCAhm_ycrn"><label for="uZ27GgYuPyyb" class="cWmNi_bGBk" style="width: 15rem;"><span class="cMIPy_bGBk"><span class="fxIji_bGBk fxIji_DpxJ fxIji_bWOh fxIji_NmrE fxIji_buDT fxIji_bBOa"><span class="ergWt_bGBk">Attempt</span><span class="bNerA_bGBk bNerA_NmrE bNerA_qfdC bNerA_bBOa bNerA_buDT bNerA_DpxJ bNerA_eFno" data-position-target="unsxPDVyHe2p"><span class="qBMHb_cSXm"><span wrap="wrap" direction="row" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_busO bDzpk_fZWR bDzpk_dyGy bDzpk_qOas"><span class="fOyUs_bGBk dJCgj_bGBk dJCgj_zczv dJCgj_dfFp"><span direction="row" wrap="no-wrap" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_busO bDzpk_fZWR bDzpk_qOas"><span class="fOyUs_bGBk dJCgj_bGBk dJCgj_zczv dJCgj_dfFp"><input id="uZ27GgYuPyyb" aria-haspopup="listbox" aria-expanded="false" aria-describedby="uuHHjHYGLf6C-description" data-testid="attemptSelect" role="button" autocomplete="off" readonly="readonly" title="Attempt 1" class="qBMHb_cwos qBMHb_ycrn qBMHb_EMjX" type="text" value="Attempt 1" width="15rem"></span><span class="fOyUs_bGBk dJCgj_bGBk" style="padding: 0px 0.75rem 0px 0px;"><span class="cCAhm_dnnz"><svg name="IconArrowOpenDown" viewBox="0 0 1920 1920" rotate="0" style="width: 1em; height: 1em;" width="1em" height="1em" aria-hidden="true" role="presentation" focusable="false" class="dUOHu_bGBk dUOHu_drOs dUOHu_cRbP cGqzL_bGBk"><g role="presentation"><path d="M526.298905 0L434 92.1683552 1301.63582 959.934725 434 1827.57054 526.298905 1920 1486.23363 959.934725z" fill-rule="evenodd" stroke="none" stroke-width="1" transform="matrix(0 1 1 0 .153 -.153)"></path></g></svg></span></span></span></span></span></span></span></span></span></label><span id="uuHHjHYGLf6C-description" class="cCAhm_dJgE"></span><span><span data-position="unsxPDVyHe2p"></span></span></span></div></span><span class="fOyUs_bGBk dJCgj_bGBk"><div class="assignment-student-submission-tracker" data-testid="submission-workflow-tracker"><span direction="row" wrap="no-wrap" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_busO bDzpk_fZWR bDzpk_qOas"><span class="fOyUs_bGBk dJCgj_bGBk dJCgj_dfFp"><div class="fOyUs_bGBk wIZqC_bGBk wIZqC_dIzR wIZqC_eCSh wIZqC_buIS"><span class="ergWt_bGBk"><progress max="3" value="3" aria-valuetext="3 / 3" aria-valuenow="3" aria-valuemax="3" aria-label="Submission Progress 3 / 3"></progress></span><svg class="wIZqC_cJVF" role="presentation" focusable="false"><circle class="wIZqC_eCEP" role="presentation" cx="50%" cy="50%" r="1em"></circle><circle class="wIZqC_dHtp" role="presentation" cx="50%" cy="50%" r="0.97em"></circle><circle class="wIZqC_cDWE" role="presentation" style="stroke-dashoffset: 0em;" cx="50%" cy="50%" r="1em"></circle></svg></div></span><span class="fOyUs_bGBk dJCgj_bGBk dJCgj_zczv"><div color="success" data-testid="submission-workflow-tracker-title" wrap="normal" letter-spacing="normal" class="enRcg_bGBk enRcg_ycrn enRcg_bdMA enRcg_eQnG enRcg_cJLh"><span transform="uppercase" wrap="normal" letter-spacing="normal" class="enRcg_bGBk enRcg_ycrn enRcg_dsRi enRcg_eQnG">Review Feedback</span></div><div data-testid="submission-workflow-tracker-subtitle" wrap="normal" letter-spacing="normal" class="enRcg_bGBk enRcg_ycrn enRcg_eQnG"><span data-testid="friendly-date-time"><span class="ergWt_bGBk">Submitted on Mar 9, 2023 10:41am</span><time datetime="2023-03-09T16:41:47.000Z" format="%b %-d, %Y %-l:%M%P" prefix="Submitted on" title="Mar 9 at 10:41am" aria-hidden="true"><span class="visible-desktop">Submitted on Mar 9, 2023 10:41am</span><span class="hidden-desktop">3/9/2023</span></time></span></div></span></span></div></span></span></span><span class="fOyUs_bGBk dJCgj_bGBk dJCgj_dfFp"><div wrap="wrap" direction="row" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_busO bDzpk_fZWR bDzpk_dyGy bDzpk_qOas"><span class="fOyUs_bGBk dJCgj_bGBk" style="margin: 0px 0.75rem 0px 0px;"><span class="fOyUs_bGBk selected-submission-grade"><div direction="column" wrap="no-wrap" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_busO bDzpk_fncw bDzpk_bZNM"><span class="fOyUs_bGBk fOyUs_fKlg dJCgj_bGBk"><span wrap="normal" letter-spacing="normal" class="enRcg_bGBk enRcg_doqw enRcg_eQnG">Attempt 1 Score:</span></span><span class="fOyUs_bGBk fOyUs_fKlg dJCgj_bGBk"><span transform="capitalize" wrap="normal" letter-spacing="normal" class="enRcg_bGBk enRcg_ycrn enRcg_bdMA enRcg_fCZK enRcg_eQnG">100/100</span></span></div></span></span><span class="fOyUs_bGBk dJCgj_bGBk" style="margin: 0px 0.75rem 0px 0px;"><div><button cursor="pointer" type="button" tabindex="0" class="fOyUs_bGBk fOyUs_fKyb fOyUs_cuDs fOyUs_cBHs fOyUs_eWbJ fOyUs_fmDy fOyUs_eeJl fOyUs_cBtr fOyUs_fuTR fOyUs_cnfU fQfxa_bGBk" style="margin: 0px; padding: 0px; border-radius: 0.25rem; border-width: 0px; width: auto; cursor: pointer;"><span class="fQfxa_caGd fQfxa_fKcQ fQfxa_buuG fQfxa_ImeN undefined fQfxa_dqAF"><span direction="row" wrap="no-wrap" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_eRIA bDzpk_fZWR bDzpk_qOas" style="width: 100%; height: 100%;"><span class="fOyUs_bGBk dJCgj_bGBk" style="padding: 0px 0.5rem 0px 0px;"><span class="fQfxa_eoCh"><svg name="IconChat" viewBox="0 0 1920 1920" rotate="0" style="width: 1em; height: 1em;" width="1em" height="1em" aria-hidden="true" role="presentation" focusable="false" class="dUOHu_bGBk dUOHu_drOs dUOHu_eXrk cGqzL_bGBk cGqzL_owrh"><g role="presentation"><path d="M677.680941,-0.0338823529 L677.680941,338.902588 L790.622118,338.902588 L790.622118,113.020235 L1807.09271,113.020235 L1807.09271,903.495529 L1581.09741,903.495529 L1581.09741,1163.26024 L1321.44565,903.495529 L1242.27388,903.495529 L1242.27388,451.843765 L677.680941,451.843765 L0.0338823529,451.843765 L0.0338823529,1468.31435 L338.744471,1468.31435 L338.744471,1887.21318 L756.739765,1468.31435 L1242.27388,1468.31435 L1242.27388,1016.43671 L1275.02682,1016.43671 L1694.15153,1435.56141 L1694.15153,1016.43671 L1920.03388,1016.43671 L1920.03388,-0.0338823529 L677.680941,-0.0338823529 Z M338.823529,903.529412 L903.529412,903.529412 L903.529412,790.588235 L338.823529,790.588235 L338.823529,903.529412 Z M338.823529,1129.41176 L677.76,1129.41176 L677.76,1016.35765 L338.823529,1016.35765 L338.823529,1129.41176 Z M112.975059,564.672 L1129.44565,564.672 L1129.44565,1355.37318 L710.433882,1355.37318 L451.685647,1615.02494 L451.685647,1355.37318 L112.975059,1355.37318 L112.975059,564.672 Z" fill-rule="evenodd" stroke="none" stroke-width="1"></path></g></svg></span></span><span class="fOyUs_bGBk dJCgj_bGBk dJCgj_dfFp"><span class="fQfxa_biBD">View Feedback</span></span></span></span></button></div></span></div></span></span></div><div class="fOyUs_bGBk" style="margin: 1.5rem 0px;"><div wrap="normal" letter-spacing="normal" class="enRcg_bGBk enRcg_ycrn enRcg_bdMA enRcg_eQnG">Unlimited Attempts Allowed</div><div wrap="normal" letter-spacing="normal" class="enRcg_bGBk enRcg_ycrn enRcg_eQnG"></div></div><div class="a2-toggle-details-container"><div class="MlJlv_bGBk MlJlv_ycrn"><button data-test-id="assignments-2-assignment-toggle-details" aria-controls="uOkjOOggaPg2" aria-expanded="true" type="button" class="MlJlv_cjSw"><span class="MlJlv_doNn"><span class="MlJlv_dnnz MlJlv_fuNk"><svg name="IconArrowOpenDown" viewBox="0 0 1920 1920" rotate="0" style="width: 1em; height: 1em;" width="1em" height="1em" aria-hidden="true" role="presentation" focusable="false" class="dUOHu_bGBk dUOHu_drOs dUOHu_eXrk cGqzL_bGBk"><g role="presentation"><path d="M568.129648 0.0124561278L392 176.142104 1175.86412 960.130789 392 1743.87035 568.129648 1920 1528.24798 960.130789z" fill-rule="evenodd" stroke="none" stroke-width="1" transform="matrix(0 1 1 0 .067 -.067)"></path></g></svg></span><span class="MlJlv_btWg"><span wrap="normal" letter-spacing="normal" class="enRcg_bGBk enRcg_ycrn enRcg_bdMA enRcg_eQnG">Details</span></span></span></button><div id="uOkjOOggaPg2" class="MlJlv_ebWM MlJlv_ycrn MlJlv_cMGi MlJlv_dUEG"><div class="MlJlv_caGd"><span class="fOyUs_bGBk" style="margin: 0px; padding: 0px;"><div class="user_content enhanced" data-test-id="assignments-2-assignment-toggle-details-text"><h2 id="pacing">Pacing</h2>
+<p>This is an <strong>individual</strong> lab. PLEASE start it today so that your long jobs will have time to complete.</p>
+<p>There is nothing to report on the first several sections of the lab. 
+But you should work through it anyway, testing that the commands work 
+for you and trying to understand what they do.&nbsp; You will be using 
+these commands in the second half of the lab and running them yourself 
+gives you important preparation for working the second half of the lab.</p>
+<p><strong>Be sure to use GlobalProtect if running this lab from off-campus.</strong></p>
+<h2 id="launching-the-course-singularity-image">Launching the course Singularity Image</h2>
+<h3 id="running-an-interactive-shell-without-gpu">Running an interactive shell without GPU</h3>
+<p>Once you are logged into Rose, run the command:</p>
+<pre><code>srun hostname</code></pre>
+<p>This will allocate a node and run the <code>hostname</code> command on that node. The hostname command tells you which node it is run on.</p>
+<p>Now run</p>
+<pre><code>srun --nodelist=dh-node1 hostname</code></pre>
+<p>This should run the command on dh-node1 and print the name of this node to the console.</p>
+<p>Now run</p>
+<pre><code>srun --pty bash</code></pre>
+<p>This will start an interactive bash shell on an allocated node.&nbsp;
+ You should see your prompt change to reflect what node you are 
+on.&nbsp; <code>--pty</code> stands for “pseudo terminal” or “psuedo 
+typer” or something similar.&nbsp; You need to include it to make the 
+prompts appear for your shell.&nbsp; Without it, nothing will print and 
+you may think that you aren’t into the node allocated by <code>srun</code> yet even though you are.</p>
+<p>Try typing some commands like <code>ls</code> or <code>pwd</code> at 
+the prompt. You are on the node, and can see and explore all the files 
+on that node, including the shared filesystem and all the local files in
+ the /scratch folder on that node. We wil be using the /scratch folder 
+to reduce our dependency on the network between the shared drives and 
+the nodes this quarter.</p>
+<p>Quick self-test: Do you know what the difference between <code>/scratch</code>, <code>~/scratch</code>, <code>./scratch</code>, and just <code>scratch</code> are?</p>
+<p>From the bash session on the node, start a singularity job:</p>
+<pre><code>singularity shell /data/cs3450/pytorch20.11.3.sif</code></pre>
+<p>Note that the prompt changes to show you are in the singularity container:</p>
+<pre><code>Singularity&gt;</code></pre>
+<p>Quick self-test: What is a container? What does it mean for a command
+ to run within a container vs.&nbsp;running straight on the node?</p>
+<p>The container shell will look a lot like the regular shell. You can type <code>ls</code>, <code>pwd</code>, etc.</p>
+<p>But within the shell, you get access to our Python instance. Try this:</p>
+<pre><code>python  
+import torch # Run this from within the Python session.&nbsp; It should succeed silently.</code></pre>
+<p>If the above commands work, you are getting the PyTorch library that we will use as our deep learning library all quarter long.</p>
+<p>It’s also good to see if you can import our textbook’s library:</p>
+<pre><code>from d2l import torch as d2l</code></pre>
+<p>This should silently succeed.&nbsp; The d2l library works with three 
+different libraries – mxnet, PyTorch, and Tensorflow.&nbsp; It provides a
+ common Facade/Adapter that work with all three libraries and perform 
+many tasks such as loading datasets for you.&nbsp; The unusual import is
+ to make it easier to switch between different underlying 
+libraries.&nbsp; We just use the torch library this quarter.</p>
+<p>But, since we didn’t request a GPU, none of the GPU commands you will use later in this lab will work yet (commands like <code>nvidia-smi</code> from the srun interactive prompt and Singularity prompt or <code>torch.cuda.current_device()</code> from the Python prompt). The next section will talk through how to request GPU resources.</p>
+<p>Now type <code>exit()</code> to leave the Python shell and <code>exit</code> to leave the singularity session, and <code>exit</code> bash session on your node to the management node.</p>
+<h3 id="running-an-interactive-shell-with-a-gpu">Running an interactive shell with a GPU</h3>
+<p>Let’s repeat the above commands, but add GPU abilities.</p>
+<p>To request a single GPU from SLURM when logging in interactively, use</p>
+<pre><code>srun --gpus=1 --pty bash</code></pre>
+<p>This will again assign you a node, perhaps different than your 
+previous one. Since most of your files are on the shared network drive, 
+it usually doesn’t make a difference.</p>
+<p>Now launch a singularity image with our Python libraries, this time 
+requesting NVIDIA support (–nv) and binding the data and scratch 
+directories (-B /data:/data -B /scratch:/scratch ) so we can access that
+ folder from within the image</p>
+<pre><code>singularity shell --nv -B /data:/data -B /scratch:/scratch /data/cs3450/pytorch20.11.3.sif</code></pre>
+<p>And now that we are in the singularity image on a node, we can run Pytorch and allocate a GPU for programming purposes:</p>
+<pre><code>python  
+import torch  
+torch.cuda.current_device()</code></pre>
+<p>This should succeed and print 0, indicating you successfully allocated GPU index 0.</p>
+<p>All of these commands can be put together into a single command. Again <code>exit()</code>/<code>exit</code> all the way back to the managment node before running this:</p>
+<pre><code>srun --gpus=1 singularity run --nv -B /data:/data -B /scratch:/scratch /data/cs3450/pytorch20.11.3.sif python -c "import torch;print('Lab Prediting Runtime: Device:',torch.cuda.current_device())"</code></pre>
+<p>Key self-test: In the command above, can you point to the command 
+that allocates a node for you? How about the option that allocates GPUs 
+on that node for you?</p>
+<p>Key self-test, continued: What does <code>pytorch20.11.3.sif</code> 
+provide that you couldn’t use without it? (If you aren’t sure, review 
+the steps you have completed so far – this question is answered earlier 
+in this lab handout.)</p>
+<p>Key self-test, continued: Which command allows you to specify a container, <code>srun</code> (SLURM run) or <code>singularity run</code>?</p>
+<p>Key self-test, continued: How can we tell that a GPU was successfully allocated?</p>
+<p>One of the benefits of running your jobs in a “single-line batch” 
+mode like this is that you can copy-paste the whole command to your 
+notes more easily, making it easier to reproduce your work later on.</p>
+<p>In the sections that follow, we allocate a node and spin up the 
+singularity image in a single step, just as in the command above.&nbsp; 
+But you are welcome to do these two steps separately (like we did 
+earlier in this lab) as you become more comfortable with these commands!</p>
+<h3 id="adding-16-cpus-to-the-gpu">Adding 16 CPUs to the GPU</h3>
+<p>In this section, you run through the same commands, but allocate 16 
+CPUs along with the 1 GPU. The student nodes have 16 CPUs for ever GPU 
+on the node, so we might as well take advantage of them!</p>
+<p>From a management node, run the command:</p>
+<pre><code>srun --partition=teaching  --pty --gpus=1 --cpus-per-gpu=16 singularity shell --nv -B /data:/data -B /scratch:/scratch /data/cs3450/pytorch20.11.3.sif</code></pre>
+<p><mark>(This used to include the option <code>--time=180</code>, but you don’t neeed to set time limits on commands in this lab. The default of 24 hours is OK.)</mark></p>
+<p><span style="text-decoration: line-through;">If you do not specify a time limit (e..g, <code>--time=180</code> limits the runtime to three hours), it may default to 24 hours.</span></p>
+<p>This will give you a bash prompt within the Singularity image:</p>
+<pre><code>Singularity&gt;</code></pre>
+<p>Recall that a Singularity image is a lightweight environment running 
+within the host operating system that gives you access to the host 
+filesystem while allowing custom software to be installed as if it were 
+installed by root. In this case, we have the pytorch library installed.</p>
+<p>Within the Singularity image, run Python and within the Python interactive prompt, import torch:</p>
+<pre><code>python  
+import torch  
+torch.cuda.current_device()</code></pre>
+<p>This should succeed and print 0, indicating you successfully allocated GPU index 0.</p>
+<p>Now, how many CPUs is <code>torch</code> set up to use?</p>
+<pre><code>torch.get_num_threads()</code></pre>
+<p>This should report 16. You can also set the number of threads, but that won’t necessarily increase the number of corse <code>torch</code> can use.</p>
+<h3 id="running-a-command-on-the-dgx">Running a command on the DGX</h3>
+<p>In this lab, you will also train on the DGX, our largest node type. 
+We have three DGX nodes, each with eight GPUs, so 24 students can run 
+these tests at the same time.</p>
+<p><strong>Please do not run interactive jobs on the DGX without consulting with your instructor</strong>. Instead, run the single command <code>nvidia-smi</code> in a singularity instance without needing an interactive job:</p>
+<pre><code>srun --partition=dgx --gpus=1 --cpus-per-gpu=16 singularity run --nv -B /data:/data -B /data:/scratch/data /data/cs3450/pytorch20.11.3.sif nvidia-smi</code></pre>
+<p>Or, if you want to run multiple commands within the same run on the DGX, you can place them in a shell script:</p>
+<pre><code>cat &gt; example.sh  
+echo "Hello, world!"  
+nvidia-smi  
+ls</code></pre>
+<p>Again, type Ctl-D to finish writing the file. (Or use the editor of 
+your choice.) Then, run the script, being sure to set the execute 
+permission on the file first:</p>
+<pre><code>chmod u+x example.sh # Set the file to be executable by the current user (you).  
+srun --partition=dgx --gpus=1 --cpus-per-gpu=16 singularity run --nv -B /data:/data -B /data:/scratch/data /data/cs3450/pytorch20.11.3.sif ./example.sh</code></pre>
+<h3 id="checking-on-the-gpus">Checking on the GPUs</h3>
+<p>When you run the command <code>nvidia-smi</code> on the <code>--partition=teaching</code> you can see that the GPU cards on these nodes are Tesla-T4s:</p>
+<pre><code>srun --partition=teaching --gpus=1 --cpus-per-gpu=16 singularity run --nv -B /data:/data -B /scratch:/scratch /data/cs3450/pytorch20.11.3.sif nvidia-smi  </code></pre>
+<p>This will output something like:</p>
+<pre><code>Sat Aug 29 11:26:23 2020  
++-----------------------------------------------------------------------------+  
+| NVIDIA-SMI 440.33.01 &nbsp; &nbsp;Driver Version: 440.33.01 &nbsp; &nbsp;CUDA Version: 11.0 &nbsp; &nbsp; |  
+|-------------------------------+----------------------+----------------------+  
+| GPU &nbsp;Name &nbsp; &nbsp; &nbsp; &nbsp;Persistence-M| Bus-Id &nbsp; &nbsp; &nbsp; &nbsp;Disp.A | Volatile Uncorr. ECC |  
+| Fan &nbsp;Temp &nbsp;Perf &nbsp;Pwr:Usage/Cap| &nbsp; &nbsp; &nbsp; &nbsp; Memory-Usage | GPU-Util &nbsp;Compute M. |  
+|===============================+======================+======================|  
+| &nbsp; 0 &nbsp;Tesla T4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;On &nbsp; | 00000000:60:00.0 Off | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 |  
+| N/A &nbsp; 44C &nbsp; &nbsp;P0 &nbsp; &nbsp;75W / &nbsp;70W | &nbsp; 2955MiB / 15109MiB | &nbsp; &nbsp; 97% &nbsp; &nbsp; &nbsp;Default |  
++-------------------------------+----------------------+----------------------+  
+  
++-----------------------------------------------------------------------------+  
+| Processes: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GPU Memory |  
+| &nbsp;GPU &nbsp; &nbsp; &nbsp; PID &nbsp; Type &nbsp; Process name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Usage &nbsp; &nbsp; &nbsp;|  
+|=============================================================================|  
+| &nbsp; &nbsp;0 &nbsp; &nbsp; 55766 &nbsp; &nbsp; &nbsp;C &nbsp; python &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 563MiB |  
+| &nbsp; &nbsp;0 &nbsp; &nbsp; 56399 &nbsp; &nbsp; &nbsp;C &nbsp; python &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2381MiB |  
++-----------------------------------------------------------------------------+</code></pre>
+<p>Running the command</p>
+<pre><code>srun --partition=dgx --gpus=1 --cpus-per-gpu=16 singularity run --nv -B /data:/data -B /data:/scratch/data /data/cs3450/pytorch20.11.3.sif nvidia-smi</code></pre>
+<p>shows that the GPUs on the DGX are V100’s.&nbsp;</p>
+<p>A note to rememer for later (you don’t need to try this now): When 
+you are on the T4 nodes, you can see how efficiently your code is using 
+the GPUs with the <code>nvidia-smi</code> command.&nbsp; Once you start a job, you can ssh directly into that node by typing <code>ssh dh-node19</code> (for example).&nbsp; Then you can run your <code>nvidia-smi</code> command using the same GPU already allocated to you on that node.</p>
+<h2 id="converting-an-srun-command-to-an-sbatch-script">Converting an srun command to an sbatch script</h2>
+<p>(This section is optional.)</p>
+<p>Some of the commands take much longer to run.&nbsp; For these 
+commands, using an sbatch script instead of srun will document your run 
+configuration and ensure your job does not exit when you log out.&nbsp; 
+(You could also use tmux to ensure your job doesn’t exit, but that won’t
+ record your run configurations for you.)</p>
+<p>Switching to sbatch is simple.&nbsp; Take your srun command and place
+ each of the arguments in a script file in a comment that starts with 
+SBATCH.&nbsp; For example, to convert this srun command that tests for 
+GPUs with nvidia-smi:</p>
+<pre><code>srun --partition=dgx --gpus=1 --cpus-per-gpu=16 singularity run --nv -B /data:/data -B /data:/scratch/data /data/cs3450/pytorch20.11.3.sif nvidia-smi</code></pre>
+<p>to a sbatch script, we would create this script, e.g., saved in <code>nvidia-smi-example.sh</code>:</p>
+<pre><code>#!/bin/bash  
+  
+#SBATCH --partition=dgx  
+#SBATCH --gpus=1  
+#SBATCH --cpus-per-gpu=16  
+singularity run --nv -B /data:/data -B /data:/scratch/data /data/cs3450/pytorch20.11.3.sif nvidia-smi</code></pre>
+<p>Note that the singularity run command should be on a single line, 
+including the command that should be run within the container on the 
+same line.</p>
+<p>Now we can run it with</p>
+<pre><code>sbatch nvidia-smi-example.sh</code></pre>
+<p>Note that only the srun arguments are included as sbatch arguments. 
+The singularity arguments are still included within an srun command 
+within the file.</p>
+<p>Usually your job will start immediately and you will see a message with the job number:</p>
+<pre><code>Submitted batch job 18285</code></pre>
+<p>You can follow the job with the <code>tail -f</code> command, modifying the number to match your job’s:</p>
+<pre><code>tail -f slurm-18285.out</code></pre>
+<p>This will open tail in a mode where it will follow (-f) your running 
+job, printing output to the screen as it is written to the file.&nbsp; 
+When your program completes, tail will not notice this. Either way, when
+ you are done looking at the file, you can use Ctl-C to exit tail.&nbsp;
+ This does not cancel your slurm job – only the tail command!</p>
+<p>To see if your program is still running, use the <code>squeue</code> command:</p>
+<pre><code>squeue</code></pre>
+<p>This will show all the jobs currently running.&nbsp; If your job is included in the list, you will know if it is running.</p>
+<p><code>squeue</code> is also useful for figuring out why your job hasn’t started yet.</p>
+<h2 id="a-comparison-of-srun-and-sbatch-for-a-simple-example">A comparison of srun and sbatch for a simple example</h2>
+<p>(again optional)</p>
+<p>To help you sort out the various moving parts, here is a brief summary table comparing two configurations:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Config 1 - interactive</th>
+<th>Config 2 - batch</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>node allocation</td>
+<td><code>srun --pty</code></td>
+<td><code>sbatch</code></td>
+</tr>
+<tr class="even">
+<td>package config</td>
+<td><code>singularity shell</code></td>
+<td><code>singularity run</code></td>
+</tr>
+</tbody>
+</table>
+<p>An example of a complete command in config 1 is:</p>
+<pre><code>srun --pty singularity shell /data/cs3450/pytorch20.11.3.sif</code></pre>
+<p>You would interactively type, e.g., <code>ls</code> in the prompt for this one.</p>
+<p>An example of a complete command in config 2 is:</p>
+<pre><code>sbatch example.sh</code></pre>
+<p>where example.sh contains:</p>
+<pre><code>#!/bin/bash  
+singularity run /data/cs3450/pytorch20.11.3.sif ls</code></pre>
+<p>You need to include the ls command on the same line as the singularity run command.</p>
+<h3 id="a-debugging-tip-when-using-sbatch"><mark>A debugging tip when using SBATCH</mark></h3>
+<p>If you are using <code>sbatch</code>, be sure to copy and keep a 
+different shell file for each experiment you run, even if the script is 
+identical between runs. Not only does this give you documentation of 
+what your shell files said for later notice, it also avoids a bug in 
+which even though you edit the shell script, but the shell script and <code>gan.py</code>
+ do not change on the node where the commands are run. This can be very 
+confusing, because you are seing the view of the file from the 
+management node. If you ever feel as if the running job is seeing an old
+ version of a file rather than what you see, this could be why.</p>
+<p>Again, the solution is simple: When you edit a shell script, copy it first before editing the copy.</p>
+<h3 id="a-general-debugging-tip-to-avoid-bus-errors"><mark>A general debugging tip – to avoid bus errors</mark></h3>
+<p>I believe bus errors are caused when your process runs out of memory – perhaps GPU memory? To avoid this, run <code>squeue</code>
+ to see what nodes have jobs, and specify a node that is not currently 
+running a job. From what students report this does help to avoid bus 
+errors.</p>
+<h2 id="the-rosie-visualizer-and-dashboard">The Rosie Visualizer and Dashboard</h2>
+<p>The <a href="http://dashboard.hpc.msoe.edu/visualizer/" class="external" target="_blank" rel="noreferrer noopener"><span>Rosie Dashboard’s visualizer</span><span class="external_link_icon" style="margin-inline-start: 5px; display: inline-block; text-indent: initial; " role="presentation"><svg viewBox="0 0 1920 1920" version="1.1" xmlns="http://www.w3.org/2000/svg" style="width:1em; height:1em; vertical-align:middle; fill:currentColor">
+    <path d="M1226.66667,267 C1314.88,267 1386.66667,338.786667 1386.66667,427 L1386.66667,427 L1386.66667,853.666667 L1280,853.666667 L1280,693.666667 L106.666667,693.666667 L106.666667,1493.66667 C106.666667,1523 130.56,1547 160,1547 L160,1547 L1226.66667,1547 C1256.10667,1547 1280,1523 1280,1493.66667 L1280,1493.66667 L1280,1280.33333 L1386.66667,1280.33333 L1386.66667,1493.66667 C1386.66667,1581.88 1314.88,1653.66667 1226.66667,1653.66667 L1226.66667,1653.66667 L160,1653.66667 C71.7866667,1653.66667 0,1581.88 0,1493.66667 L0,1493.66667 L0,427 C0,338.786667 71.7866667,267 160,267 L160,267 Z M1584.37333,709.293333 L1904.37333,1029.29333 C1925.17333,1050.09333 1925.17333,1083.90667 1904.37333,1104.70667 L1904.37333,1104.70667 L1584.37333,1424.70667 L1508.96,1349.29333 L1737.86667,1120.38667 L906.613333,1120.38667 L906.613333,1013.72 L1737.86667,1013.72 L1508.96,784.706667 L1584.37333,709.293333 Z M1226.66667,373.666667 L160,373.666667 C130.56,373.666667 106.666667,397.666667 106.666667,427 L106.666667,427 L106.666667,587 L1280,587 L1280,427 C1280,397.666667 1256.10667,373.666667 1226.66667,373.666667 L1226.66667,373.666667 Z" stroke="none" stroke-width="1" fill-rule="evenodd"></path>
+</svg>
+<span class="screenreader-only">Links to an external site.</span></span></a> also provides much interesting information about the nodes.</p>
+<p>When using the visualizer, remember that your “GPU 0” may not be GPU 1
+ on the dashboard. Each student sees their GPU as “GPU 0” regardless of 
+which GPU they were assigned.</p>
+<h2 id="experiment">Experiment</h2>
+<p>As a reminder, it is important that you complete the steps above even
+ though you are not required to comment on them in your report.</p>
+<p>Copy gan.py into your working directory:</p>
+<pre><code>cp /data/datasets/pokemon/gan.py ~/path/where/Im/working/</code></pre>
+<h3 id="start-the-report">Start the report</h3>
+<p>Start a report as a Word document or some other formatted document 
+that you can print to PDF.&nbsp; On the first page, include the course 
+number, your name, the date, the lab number and lab name, e.g.:</p>
+<pre><code>CS3450  
+Phileas Fogg  
+1 Jan 2023  
+Lab 1: Predicting Runtimes</code></pre>
+<p>Include a title on your document and section headers in your 
+document.&nbsp; You can use the lab number and name as a title for your 
+document if you wish.</p>
+<p>Also include an introduction section describing the lab in your own 
+words. (You would be surprised how many students forget this!&nbsp; Yet 
+it is the part of a report most likely to be read in industry and 
+academia!)</p>
+<h3 id="predict-relative-runtime-from-gpu-specs">Predict Relative Runtime from GPU Specs</h3>
+<p>The <a href="https://images.nvidia.com/content/technologies/volta/pdf/volta-v100-datasheet-update-us-1165301-r5.pdf" class="external" target="_blank" rel="noreferrer noopener"><span>NVIDIA V100 has a nominal double-precision throughput of 16.4 single-precision (float) TFLOPS</span><span class="external_link_icon" style="margin-inline-start: 5px; display: inline-block; text-indent: initial; " role="presentation"><svg viewBox="0 0 1920 1920" version="1.1" xmlns="http://www.w3.org/2000/svg" style="width:1em; height:1em; vertical-align:middle; fill:currentColor">
+    <path d="M1226.66667,267 C1314.88,267 1386.66667,338.786667 1386.66667,427 L1386.66667,427 L1386.66667,853.666667 L1280,853.666667 L1280,693.666667 L106.666667,693.666667 L106.666667,1493.66667 C106.666667,1523 130.56,1547 160,1547 L160,1547 L1226.66667,1547 C1256.10667,1547 1280,1523 1280,1493.66667 L1280,1493.66667 L1280,1280.33333 L1386.66667,1280.33333 L1386.66667,1493.66667 C1386.66667,1581.88 1314.88,1653.66667 1226.66667,1653.66667 L1226.66667,1653.66667 L160,1653.66667 C71.7866667,1653.66667 0,1581.88 0,1493.66667 L0,1493.66667 L0,427 C0,338.786667 71.7866667,267 160,267 L160,267 Z M1584.37333,709.293333 L1904.37333,1029.29333 C1925.17333,1050.09333 1925.17333,1083.90667 1904.37333,1104.70667 L1904.37333,1104.70667 L1584.37333,1424.70667 L1508.96,1349.29333 L1737.86667,1120.38667 L906.613333,1120.38667 L906.613333,1013.72 L1737.86667,1013.72 L1508.96,784.706667 L1584.37333,709.293333 Z M1226.66667,373.666667 L160,373.666667 C130.56,373.666667 106.666667,397.666667 106.666667,427 L106.666667,427 L106.666667,587 L1280,587 L1280,427 C1280,397.666667 1256.10667,373.666667 1226.66667,373.666667 L1226.66667,373.666667 Z" stroke="none" stroke-width="1" fill-rule="evenodd"></path>
+</svg>
+<span class="screenreader-only">Links to an external site.</span></span></a> (floating point operations per second). The <a href="https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-t4/t4-tensor-core-datasheet-951643.pdf" class="external" target="_blank" rel="noreferrer noopener"><span>T4 has a throughput of 8.1 single-precision TFLOPS</span><span class="external_link_icon" style="margin-inline-start: 5px; display: inline-block; text-indent: initial; " role="presentation"><svg viewBox="0 0 1920 1920" version="1.1" xmlns="http://www.w3.org/2000/svg" style="width:1em; height:1em; vertical-align:middle; fill:currentColor">
+    <path d="M1226.66667,267 C1314.88,267 1386.66667,338.786667 1386.66667,427 L1386.66667,427 L1386.66667,853.666667 L1280,853.666667 L1280,693.666667 L106.666667,693.666667 L106.666667,1493.66667 C106.666667,1523 130.56,1547 160,1547 L160,1547 L1226.66667,1547 C1256.10667,1547 1280,1523 1280,1493.66667 L1280,1493.66667 L1280,1280.33333 L1386.66667,1280.33333 L1386.66667,1493.66667 C1386.66667,1581.88 1314.88,1653.66667 1226.66667,1653.66667 L1226.66667,1653.66667 L160,1653.66667 C71.7866667,1653.66667 0,1581.88 0,1493.66667 L0,1493.66667 L0,427 C0,338.786667 71.7866667,267 160,267 L160,267 Z M1584.37333,709.293333 L1904.37333,1029.29333 C1925.17333,1050.09333 1925.17333,1083.90667 1904.37333,1104.70667 L1904.37333,1104.70667 L1584.37333,1424.70667 L1508.96,1349.29333 L1737.86667,1120.38667 L906.613333,1120.38667 L906.613333,1013.72 L1737.86667,1013.72 L1508.96,784.706667 L1584.37333,709.293333 Z M1226.66667,373.666667 L160,373.666667 C130.56,373.666667 106.666667,397.666667 106.666667,427 L106.666667,427 L106.666667,587 L1280,587 L1280,427 C1280,397.666667 1256.10667,373.666667 1226.66667,373.666667 L1226.66667,373.666667 Z" stroke="none" stroke-width="1" fill-rule="evenodd"></path>
+</svg>
+<span class="screenreader-only">Links to an external site.</span></span></a>.&nbsp;
+ In your report, record what ratio you expect between the times these 
+two systems will take to train a neural network. Briefly explain your 
+reasoning.&nbsp; Assume that only one GPU is used on each node.&nbsp; I 
+don’t know of an authoritative source defining what counts as a FLOP, 
+but <a href="https://stackoverflow.com/a/329243/14260454" class="external" target="_blank" rel="noreferrer noopener"><span>this Stack Overflow answer</span><span class="external_link_icon" style="margin-inline-start: 5px; display: inline-block; text-indent: initial; " role="presentation"><svg viewBox="0 0 1920 1920" version="1.1" xmlns="http://www.w3.org/2000/svg" style="width:1em; height:1em; vertical-align:middle; fill:currentColor">
+    <path d="M1226.66667,267 C1314.88,267 1386.66667,338.786667 1386.66667,427 L1386.66667,427 L1386.66667,853.666667 L1280,853.666667 L1280,693.666667 L106.666667,693.666667 L106.666667,1493.66667 C106.666667,1523 130.56,1547 160,1547 L160,1547 L1226.66667,1547 C1256.10667,1547 1280,1523 1280,1493.66667 L1280,1493.66667 L1280,1280.33333 L1386.66667,1280.33333 L1386.66667,1493.66667 C1386.66667,1581.88 1314.88,1653.66667 1226.66667,1653.66667 L1226.66667,1653.66667 L160,1653.66667 C71.7866667,1653.66667 0,1581.88 0,1493.66667 L0,1493.66667 L0,427 C0,338.786667 71.7866667,267 160,267 L160,267 Z M1584.37333,709.293333 L1904.37333,1029.29333 C1925.17333,1050.09333 1925.17333,1083.90667 1904.37333,1104.70667 L1904.37333,1104.70667 L1584.37333,1424.70667 L1508.96,1349.29333 L1737.86667,1120.38667 L906.613333,1120.38667 L906.613333,1013.72 L1737.86667,1013.72 L1508.96,784.706667 L1584.37333,709.293333 Z M1226.66667,373.666667 L160,373.666667 C130.56,373.666667 106.666667,397.666667 106.666667,427 L106.666667,427 L106.666667,587 L1280,587 L1280,427 C1280,397.666667 1256.10667,373.666667 1226.66667,373.666667 L1226.66667,373.666667 Z" stroke="none" stroke-width="1" fill-rule="evenodd"></path>
+</svg>
+<span class="screenreader-only">Links to an external site.</span></span></a> has the ring of truth for me (Dr.&nbsp;Yoder).</p>
+<h3 id="experimentally-determine-the-runtime-from-running-one-epoch">Experimentally Determine the Runtime from Running One Epoch</h3>
+<p>Now, take the provided script, and confirm that the number of epochs 
+is 1:&nbsp; (In deep learning, an epoch is one pass over the training 
+data)</p>
+<pre><code>NUM_EPOCHS = 1</code></pre>
+<p>at the top of the script.</p>
+<p>In the following sections, we will walk you through how to run one 
+epoch of training on a T4 node with two CPUs, on a T4 node with eighteen
+ CPUs, on a T4 node with a single T4 GPU, and on the DGX with a single 
+V100 GPU.&nbsp; As you run each of these tests, record the total number 
+of seconds to execute the script in each environment in a summary 
+table.&nbsp; (You may also wish to record the exact output on timing 
+reported at the end of the script.)</p>
+<p>We will discuss how to do the runs on the T4 and DGX in the next few sections.</p>
+<h4 id="running-on-a-t4-node-with-two-cpus">Running on a T4 Node with two CPUs</h4>
+<p>To run on a T4 node in interactive mode, you can use the same interactive command discussed earlier, but specifying the <code>--cpus-per-task=2</code>.</p>
+<p>Here we use two CPUs as our minimum number of CPUs because the cpus 
+are hyperthreaded.&nbsp; This means the two CPUs share the same physical
+ core.&nbsp; By allocating two CPUs, we reduce the risk that another 
+student’s work will be assigned to the same physical core.</p>
+<pre><code>srun --partition=teaching --pty --cpus-per-task=2 singularity shell -B /data:/data -B /scratch:/scratch /data/cs3450/pytorch20.11.3.sif</code></pre>
+<p>Within your running singularity image, you can use the <code>nproc</code> command to determine how many CPUs you have and the <code>nvidia-smi</code> command should fail since your SLURM job doesn’t have a GPU.</p>
+<p>Make sure the gan.py file has the desired number of epochs in the constant near the top, as discussed earlier.&nbsp;&nbsp;<code>less gan.py</code> can be helpful for this.</p>
+<p>From the directory containing the <code>gan.py</code> file, run this command:</p>
+<pre><code>python gan.py</code></pre>
+<p>Record the total running time in your table.</p>
+<p>When you are done with the interactive session, type <code>exit()</code> to quit Python and <code>exit</code> to terminate the Singularity image.</p>
+<h4 id="running-on-a-t4-node-with-sixteen-hyperthreaded-cpu-cores">Running on a T4 Node with sixteen hyperthreaded CPU cores</h4>
+<p>Each T4 node has four GPUs and 72 CPUs.&nbsp; So from a resource 
+allocation perspective, it’s OK to use sixteen CPUs per student – four 
+students should still be able to use a node at one time.</p>
+<p>To do a run with sixteen CPUs, simple replace the cpu argument with <code>--cpus-per-task=16</code> as you work through the previous section.</p>
+<h4 id="t4-node-with-a-gpu-and-eight-cpus">T4 Node with a GPU (and eight CPUs)</h4>
+<p>From a mgmt node (not a worker node or Singularity image), run the command:</p>
+<pre><code>srun --partition=teaching --pty --gpus=1 --cpus-per-gpu=8 singularity shell --nv -B /data:/data -B /scratch:/scratch /data/cs3450/pytorch20.11.3.sif</code></pre>
+<p><mark>(This used to include the option <code>--time=60</code>, but you don’t neeed to set time limits on commands in this lab. The default of 24 hours is OK.)</mark></p>
+<p>Perhaps check that you have a GPU:</p>
+<pre><code>nvidia-smi</code></pre>
+<p>… and again run:</p>
+<pre><code>python gan.py</code></pre>
+<p>Again record the total running time in your table.</p>
+<h4 id="running-on-a-dgx-node-with-a-gpu-and-eight-cpus">Running on a DGX Node with a GPU (and eight CPUs)</h4>
+<p>From the same folder in your base Rosie login (not a Singularity image), run the command:</p>
+<pre><code>srun --partition=dgx --gpus=1 --cpus-per-gpu=8 singularity run --nv -B /data:/data -B /data:/scratch/data /data/cs3450/pytorch20.11.3.sif python gan.py</code></pre>
+<p>Also note that the local /scratch folder does not exist on the dgx 
+nodes, so we are faking it by mapping the networked /data folder as if 
+it were a /scratch/data folder within our image. But the files will 
+actually be accessed through the network when running this 
+command.&nbsp; This doesn’t seem to slow it down too much in my test, 
+but you are welcome to comment on this in your own experiments as well!</p>
+<h3 id="predict-the-runtime-for-20-epochs">Predict the Runtime for 20 epochs</h3>
+<p>Now that you have actual runtimes in a variety of computing 
+environments, predict the runtime to train through 20 epochs in each 
+environment.&nbsp; Include your predictions in the same table in a new 
+column.</p>
+<h3 id="consider-switching-to-a-batch-job"><mark>Consider switching to a batch job</mark></h3>
+<p><mark>Look at your runtimes, and based on the runtime you expect, consider using a tool that allows you to disconnect like the <code>sbatch</code> tool discussed under the optional sections above. Some students instead use <code>tmux</code> or <code>nohup</code> with <code>srun</code>. Although we do not provide instruction on how to use these tools, they are also an option.</mark></p>
+<h3 id="experimentally-determine-the-runtime-from-running-20-epochs">Experimentally Determine the Runtime from Running 20 Epochs</h3>
+<p>Now you have predicted how long this will take: Set <code>NUM_EPOCHS = 20</code>&nbsp;and
+ repeat your timing experiments.&nbsp; Fill in yet another new column in
+ your table above.&nbsp; Again, you may also wish to record some of the 
+other diagnostic information printed at the end of the script.</p>
+<p><span style="text-decoration: line-through;">This is important: Be 
+sure to set the timeout to at least twice (perhaps four times) what you 
+expect the network to take to run. For example, if you expect it to take
+ 3600 seconds, set the timeout to at least 120 minutes.&nbsp; It’s also 
+OK to remove the timeout when you are running the job in batch mode.</span></p>
+<p>All the jobs should finish within 24 hours, so if you predict any job
+ will run for longer than 24 hours, please contact your instructor 
+promptly. <mark>If, in very rare cases, your job times out at 24 hours, simply report this as a job that took more than 24 hours to run.</mark></p>
+<h3 id="discussion">Discussion</h3>
+<p>Include a concluding discussion in your report. How closely did your 
+predictions match the reality?&nbsp; Explain any differences.&nbsp; 
+Also, be sure to discuss how the relative speed between the DGX and the 
+T4 compared with your predictions.</p>
+<p>And, as a quick checklist, confirm your report has: (See previous requirements for details)</p>
+<ul>
+<li>Title information and introduction</li>
+<li>Prediction of relative training speed on the DGX vs the T4</li>
+<li>Actual runtime for training for one epoch in each configuration</li>
+<li>Predicted time to train through 20 epochs based on the one epoch training time</li>
+<li>Actual runtime for training twenty epochs.</li>
+</ul>
+<h3 id="just-for-fun">Just for Fun</h3>
+<h4 id="figuring-out-how-to-share-rosie-better">Figuring out how to share Rosie better</h4>
+<p>The SE junior-year project <a href="https://dashboard.hpc.msoe.edu/" class="external" target="_blank" rel="noreferrer noopener"><span>Rosie Dashboard</span><span class="external_link_icon" style="margin-inline-start: 5px; display: inline-block; text-indent: initial; " role="presentation"><svg viewBox="0 0 1920 1920" version="1.1" xmlns="http://www.w3.org/2000/svg" style="width:1em; height:1em; vertical-align:middle; fill:currentColor">
+    <path d="M1226.66667,267 C1314.88,267 1386.66667,338.786667 1386.66667,427 L1386.66667,427 L1386.66667,853.666667 L1280,853.666667 L1280,693.666667 L106.666667,693.666667 L106.666667,1493.66667 C106.666667,1523 130.56,1547 160,1547 L160,1547 L1226.66667,1547 C1256.10667,1547 1280,1523 1280,1493.66667 L1280,1493.66667 L1280,1280.33333 L1386.66667,1280.33333 L1386.66667,1493.66667 C1386.66667,1581.88 1314.88,1653.66667 1226.66667,1653.66667 L1226.66667,1653.66667 L160,1653.66667 C71.7866667,1653.66667 0,1581.88 0,1493.66667 L0,1493.66667 L0,427 C0,338.786667 71.7866667,267 160,267 L160,267 Z M1584.37333,709.293333 L1904.37333,1029.29333 C1925.17333,1050.09333 1925.17333,1083.90667 1904.37333,1104.70667 L1904.37333,1104.70667 L1584.37333,1424.70667 L1508.96,1349.29333 L1737.86667,1120.38667 L906.613333,1120.38667 L906.613333,1013.72 L1737.86667,1013.72 L1508.96,784.706667 L1584.37333,709.293333 Z M1226.66667,373.666667 L160,373.666667 C130.56,373.666667 106.666667,397.666667 106.666667,427 L106.666667,427 L106.666667,587 L1280,587 L1280,427 C1280,397.666667 1256.10667,373.666667 1226.66667,373.666667 L1226.66667,373.666667 Z" stroke="none" stroke-width="1" fill-rule="evenodd"></path>
+</svg>
+<span class="screenreader-only">Links to an external site.</span></span></a>
+ is getting quite useful. Consider looking at its output alongside srun 
+to get a sense for what external factors are impacting the runtime of 
+your jobs.&nbsp; The more we can make GPUs the limiting factor in our 
+runtimes, the better, and your advice is very much appreciated!</p>
+<h4 id="training-imagenet">Training Imagenet</h4>
+<p>Thanks to Nikhil Gajgate’s Undergraduate Research (UR) work, we now 
+have the capability to train and modify the structure of AlexNet here at
+ MSOE.</p>
+<p>Let me know if you are interested in exploring this.&nbsp; Training 
+(and predicting training times for) AlexNet is very similar to this lab,
+ it just takes a bit longer.&nbsp; A full train takes a few days using a
+ single T4, though I think the bottleneck may not be the T4, since GPU 
+utilization appears lower than it should be.</p>
+<h4 id="looking-at-the-images-produced-by-the-gan">Looking at the images produced by the GAN</h4>
+<p><code>gan.py</code> trains on Pokemon images and attempts to generate
+ random novel Pokemon characters.&nbsp; You can see its work by 
+downloading the imgs.npy file it writes to your machine, e.g., with</p>
+<p>scp <a href="mailto:username@rosie:path/within/your/home/folder/on/rosie/imgs.npy">username@rosie:path/within/your/home/folder/on/rosie/imgs.npy</a> .</p>
+<p>and, from a python prompt, running:</p>
+<pre><code>import numpy as np  
+from matplotlib import pyplot as plt   
+imgs =&nbsp; np.load('imgs.npy')  
+plt.imshow(imgs)</code></pre>
+<p>You can also look at the training history, if you download the file <code>losses.npy</code>:</p>
+<pre><code>from matplotlib import pyplot as plt  
+import numpy as np  
+import os  
+losses = np.load('losses.npy')  
+plt.plot(losses[:,0],losses[:,1:3])  
+plt.legend(['discriminator','generator'])  
+plt.xlabel('epoch')  
+plt.ylabel('loss')</code></pre>
+<h2 id="deliverables">Deliverables</h2>
+<p>Submit your report in PDF form.</p></div></span></div></div></div></div><div data-testid="assignment-2-student-content-tabs"><span class="fOyUs_bGBk" style="padding: 0.75rem 0px;"><div class="fOyUs_bGBk" style="margin: auto auto 2.25rem;"><div data-testid="attempt-tab"><div style="background-color: rgb(245, 245, 245); border-top: 2px solid rgb(199, 205, 209);"><span data-testid="file-preview" direction="column" wrap="no-wrap" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_busO bDzpk_cQFX bDzpk_bZNM" style="width: 100%;"><span class="fOyUs_bGBk fOyUs_fKlg dJCgj_bGBk"><div style="max-width: 1366px; height: 0px; padding-bottom: 130%; position: relative;" data-testid="assignments_2_submission_preview"><span class="ergWt_bGBk">keysers-CS3450-lab01.pdf</span><iframe src="/api/v1/canvadoc_session?blob=%7B%22anonymous_instructor_annotations%22:false,%22moderated_grading_allow_list%22:null,%22submission_id%22:2370654,%22enable_annotations%22:true,%22enrollment_type%22:%22student%22,%22user_id%22:98880000000002252,%22attachment_id%22:1971336,%22type%22:%22canvadoc%22%7D&amp;hmac=5dff8ae4e7958f6f7ecec9f670c66374ea90360c" title="preview" style="border-color: currentcolor currentcolor currentcolor rgb(199, 205, 209); border-style: none none none solid; border-width: medium medium medium 1px; border-image: none 100% / 1 / 0 stretch; width: 100%; height: 100%; position: absolute;" allowfullscreen=""></iframe></div></span></span></div></div></div><div><div as="footer" data-testid="student-footer" id="assignments-student-footer" style="background-color: rgb(255, 255, 255); border-color: rgb(199, 205, 209);"><span direction="row" wrap="no-wrap" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_oDLF bDzpk_fZWR bDzpk_qOas" style="margin: 0.5rem; height: 100%;"><span class="fOyUs_bGBk dJCgj_bGBk dJCgj_dfFp"><span data-position="uzVYTKmxf7HD"><a data-testid="previous-assignment-btn" aria-describedby="uxuaOfejUnYY" data-popover-trigger="true" data-position-target="uzVYTKmxf7HD" cursor="pointer" href="https://msoe.instructure.com/courses/13814/modules/items/563032" tabindex="0" class="fOyUs_bGBk fOyUs_fKyb fOyUs_cuDs fOyUs_cBHs fOyUs_eWbJ fOyUs_fmDy fOyUs_eeJl fOyUs_cBtr fOyUs_fuTR fOyUs_cnfU fQfxa_bGBk" style="margin: 0px 0.75rem 0px 0px; padding: 0px; border-radius: 0.25rem; border-width: 0px; width: auto; cursor: pointer;"><span class="fQfxa_caGd fQfxa_fKcQ fQfxa_buuG fQfxa_ImeN undefined fQfxa_dqAF"><span class="fQfxa_biBD"><span class="ergWt_bGBk">Previous Module</span><svg name="IconArrowOpenStart" viewBox="0 0 1920 1920" rotate="0" style="width: 1em; height: 1em;" width="1em" height="1em" aria-hidden="true" role="presentation" focusable="false" class="dUOHu_bGBk dUOHu_drOs dUOHu_eXrk cGqzL_bGBk cGqzL_owrh"><g role="presentation"><path d="M568.129648 0.0124561278L392 176.142104 1175.86412 960.130789 392 1743.87035 568.129648 1920 1528.24798 960.130789z" fill-rule="evenodd" stroke="none" stroke-width="1" transform="matrix(-1 0 0 1 1920.135 0)"></path></g></svg><span aria-hidden="true">Previous</span></span></span></a></span></span><span class="fOyUs_bGBk dJCgj_bGBk dJCgj_zczv" style="margin: 0px 0.75rem;"><span direction="row" wrap="no-wrap" class="fOyUs_bGBk fOyUs_desw bDzpk_bGBk bDzpk_crdn bDzpk_fZWR bDzpk_qOas"><span class="fOyUs_bGBk dJCgj_bGBk" style="margin: auto 0px auto 0.5rem;"><button data-testid="try-again-button" cursor="pointer" type="button" tabindex="0" class="fOyUs_bGBk fOyUs_fKyb fOyUs_cuDs fOyUs_cBHs fOyUs_eWbJ fOyUs_fmDy fOyUs_eeJl fOyUs_cBtr fOyUs_fuTR fOyUs_cnfU fQfxa_bGBk" style="margin: 0px; padding: 0px; border-radius: 0.25rem; border-width: 0px; width: auto; cursor: pointer;"><span class="fQfxa_caGd fQfxa_fKcQ fQfxa_eCSh fQfxa_ImeN undefined fQfxa_dqAF"><span class="fQfxa_biBD">Try Again</span></span></button></span></span></span><span class="fOyUs_bGBk dJCgj_bGBk dJCgj_dfFp"><span data-position="uCgZHDLbk7Kp"><a data-testid="next-assignment-btn" aria-describedby="ubgnVyyagpHH" data-popover-trigger="true" data-position-target="uCgZHDLbk7Kp" cursor="pointer" href="https://msoe.instructure.com/courses/13814/modules/items/543831" tabindex="0" class="fOyUs_bGBk fOyUs_fKyb fOyUs_cuDs fOyUs_cBHs fOyUs_eWbJ fOyUs_fmDy fOyUs_eeJl fOyUs_cBtr fOyUs_fuTR fOyUs_cnfU fQfxa_bGBk" style="margin: 0px 0px 0px 0.5rem; padding: 0px; border-radius: 0.25rem; border-width: 0px; width: auto; cursor: pointer;"><span class="fQfxa_caGd fQfxa_fKcQ fQfxa_buuG fQfxa_ImeN undefined fQfxa_dqAF"><span class="fQfxa_biBD"><span class="ergWt_bGBk">Next Module</span><span aria-hidden="true">Next</span><svg name="IconArrowOpenEnd" viewBox="0 0 1920 1920" rotate="0" style="width: 1em; height: 1em;" width="1em" height="1em" aria-hidden="true" role="presentation" focusable="false" class="dUOHu_bGBk dUOHu_drOs dUOHu_eXrk cGqzL_bGBk cGqzL_owrh"><g role="presentation"><path d="M568.129648 0.0124561278L392 176.142104 1175.86412 960.130789 392 1743.87035 568.129648 1920 1528.24798 960.130789z" fill-rule="evenodd" stroke="none" stroke-width="1"></path></g></svg></span></span></a></span></span></span></div></div></span></div></div></div></div>
+        </div>
+        <div id="right-side-wrapper" class="ic-app-main-content__secondary">
+          <aside id="right-side" role="complementary">
+            
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div style="display:none;"><!-- Everything inside of this should always stay hidden -->
+        <div id="page_view_id">32ce30f2-bda2-4f29-acb5-120a774a8dca</div>
+    </div>
+  <div id="aria_alerts" class="hide-text affix" role="alert" aria-live="assertive"></div>
+  <div id="StudentTray__Container"></div>
+    <div class="NewUserTutorialTray__Container"></div>
+  
+
+  <script>
+    Object.assign(
+      ENV,
+      {}
+    )
+  </script>
+
+<link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/nav_tourpoints-c-10a76c256e.js" as="script" type="text/javascript"><link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/inst_fs_service_worker-c-8d9c6558fc.js" as="script" type="text/javascript"><script>
+//<![CDATA[
+(window.bundles || (window.bundles = [])).push('nav_tourpoints');
+(window.bundles || (window.bundles = [])).push('inst_fs_service_worker');
+//]]>
+</script>
+  <script>
+//<![CDATA[
+
+      ;["https://instructure-uploads.s3.amazonaws.com/account_98880000000000001/attachments/1416461/canvas.js"].forEach(function(src) {
+        var s = document.createElement('script'); s.src = src; s.async = false;
+        document.head.appendChild(s)
+      });
+//]]>
+</script>
+
+</div> <!-- #application -->
+
+
+<div id="ek-overlay" style="display: none;"></div><div id="ek-modal" style="display: none;" role="dialog" tabindex="-1" aria-live="assertive" aria-labelledby="ek-modal-header"><div class="ek-modal-content"><h2 class="ek-modal-header" id="ek-modal-header"></h2><a id="ek-modal-close"></a><div class="ek-modal-body" id="ek-modal-body"></div><div class="ek-modal-footer"></div></div></div><div id="nav-tray-portal" style="position: relative; z-index: 99;"></div><iframe src="https://msoe.instructure.com/accounts/1/external_tools/sessionless_launch?verifier=7765cadb39c4f4186c9a4eb853ac3172a0d3108abed9e1e1a92ebee909c94999df8b2a26fc5461deff4f3c0ec368e9dce3ca12dc1c48f8e2598ac4fe8a7b6d1f" id="evalkit-lti" style="display:none;"></iframe><span dir="ltr"><span data-position-content="uzVYTKmxf7HD" class="fOyUs_bGBk fOyUs_cuDs fOyUs_fQrx dqmEK_ftAV dqmEK_bFHc" style="border-width: 0px; top: 0px; left: -9999em; position: absolute; overflow: hidden; pointer-events: none; display: none;"><span class="fOyUs_bGBk fOyUs_dnJm fOyUs_dzKA fOyUs_EMjX fOyUs_elGp fOyUs_UeJS dqmEK_caGd" style="border-radius: 0.25rem; border-width: 0.0625rem; width: auto; height: auto;"><span class="dqmEK_fAVq dqmEK_ejeM undefined"></span><span id="uxuaOfejUnYY" class="eZLSb_bGBk" role="tooltip">Previous Module: Welcome: Begin Here!</span></span></span></span><span dir="ltr"><span data-position-content="uCgZHDLbk7Kp" class="fOyUs_bGBk fOyUs_cuDs fOyUs_fQrx dqmEK_ftAV dqmEK_bFHc" style="border-width: 0px; top: 0px; left: -9999em; position: absolute; overflow: hidden; pointer-events: none; display: none;"><span class="fOyUs_bGBk fOyUs_dnJm fOyUs_dzKA fOyUs_EMjX fOyUs_elGp fOyUs_UeJS dqmEK_caGd" style="border-radius: 0.25rem; border-width: 0.0625rem; width: auto; height: auto;"><span class="dqmEK_fAVq dqmEK_ejeM undefined"></span><span id="ubgnVyyagpHH" class="eZLSb_bGBk" role="tooltip">Next: Reading 1: Alexnet</span></span></span></span></body></html>
