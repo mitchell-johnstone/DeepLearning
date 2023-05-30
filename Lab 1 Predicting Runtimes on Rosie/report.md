@@ -52,10 +52,12 @@ process and become more familiar with tmux.
 Dang, these guys were slow :(
 | Node used | number of CPUS | Total Runtime (s) |
 |-|-|-|
-| T4 | 2 |  |
-| T4 | 16 |  |
+| T4 | 2 | 28138.8s |
+| T4 | 16 | 10658.7s |
 | T4 & GPU | 8 | 1347s |
 | DGX & GPU | 8 |  756s |
+
+In general, the results were fairly what I expected, only off by a few minutes at the most. 
 
 
 
