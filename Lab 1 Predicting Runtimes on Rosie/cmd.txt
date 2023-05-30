@@ -1,0 +1,24 @@
+Commands explored in Lab 1
+==========================
+
+Requesting a specific node
+- srun --nodelist=dh-node1 cmd
+
+Requesting a node with a GPU
+- srun --gpus=1 singularity run --nv -B /data:/data -B /scratch:/scratch /data/cs3450/pytorch20.11.3.sif python -c "import torch;print('Lab Predicting Runtime: Device:',torch.cuda.current_device())"
+	srun requests the node
+	singularity sets up a container, connecting to local repose
+	torch gets the PyTorch library
+
+
+Requesting a node with a GPU and 16 threads (CPUs)
+- srun --partition=teaching --pty --gpus=1 --cpus-per-gpu=16 singularity shell --nv -B /data:/data -B /scratch:/scratch /data/cs3450/pytorch20.11.3.sif
+
+Requesting a DGX node
+srun --partition=dgx --gpus=1 --cpus-per-gpu=16 singularity run --nv -B /data:/data -B /data:/scratch/data /data/cs3450/pytorch20.11.3.sif nvidia-smi
+
+Running bash file on DGX Node
+srun --partition=dgx --gpus=1 --cpus-per-gpu=16 singularity run --nv -B
+/data:/data -B /data:/scratch/data /data/cs3450/pytorch20.11.3.sif ./example.sh
+
+
